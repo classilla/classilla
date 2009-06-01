@@ -19,6 +19,9 @@ WaMCoM was Kai Engert's maintained version of Mozilla 1.3.1 and the direct ances
 ==Does Mozilla support Classilla or Clecko?==
 No, and it is highly unlikely they ever will again given the niche user base. For this reason, *you should not ask Mozilla for support of Classilla/Clecko, nor should you ever file Bugzilla entries.* If there is a specific issue that merits Bugzilla notation, let the Classilla project leads determine that on your behalf.
 
+==When will new versions of Classilla come out?==
+See [Roadmap].
+
 ==What is Bugzilla? What are Bugzilla numbers?==
 Strictly speaking [http://bugzilla.mozilla.org/ Bugzilla] refers to either the Bugzilla software package, or Mozilla's own Bugzilla installation which is used for tracking Mozilla bugs. In our usage, we almost always mean the latter sense. A Bugzilla number refers to the ID number of a specific issue in the Bugzilla database, with its associated patch(es), if any. *If your bug report corresponds to a specific Bugzilla number, including that in your report helps immensely as there may already be a patch that can be adapted.*
 
