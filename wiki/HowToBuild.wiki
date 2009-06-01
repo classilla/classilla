@@ -1,0 +1,6 @@
+#summary How to set up the Classilla build environment.
+
+= Prerequisites =
+
+
+= How to compile =
