@@ -1,0 +1,35 @@
+#summary Roadmap of expected releases and their respective release dates
+
+*Please don't modify this document unless you are authorized to do so.*
+
+= Roadmap =
+
+This document is always subject to change, but basically covers which version of Classilla will come out when. In keeping with the OS 9-specific motif, initial versions will be numbered according to official Apple versions of OS 9 (while they last).
+
+==Classilla 9.0==
+
+This will be the first release of Classilla with the updated "Clecko" layout engine. It is roughly the equivalent of Mozilla 1.5. This version will have the layout improvements and multiple security improvements, along with changes for rebranding and any Mac-specific bug fixes that can be inserted before ship date.
+
+This version will be intentionally unfinished -- since WaMCoM is no more, this is the only version of Mozilla for the classic Mac that even exists in theoretical form, so its release is being accelerated to ensure continuity. For that reason, it will be released "no matter what" on 1 July 2009.
+
+==Classilla 9.0.4==
+
+This will be the second release of Classilla. It will continue to add security improvements from Bugzilla, and is expected to have modest improvements to JavaScript. Layout improvements will be intentionally restricted to showstoppers only (see "9.0.5" for why). Various other MacOS-specific showstopper bugs will also be targetted for this release.
+
+The current roadmap envisions 9.0.4 being released for Q4 2009 or Q1 2010.
+
+==Classilla 9.0.5 through 9.0.9==
+
+These are placeholder versions for a planned update of the layout engine to the later reflow branch implemented by Mozilla through 1.9 (current as of this writing), based largely off the extremely large patch in 300030. This version not only fixes a large number of bugs (and spawns quite a few of its own), but also gives us the opportunity for patching in later layout improvements which will probably not work at all against the 1.3-derived current version of Clecko.
+
+Further security improvements will also be selected and applied from Bugzilla.
+
+Because this update is extensive, it has no current timeline. Alpha versions will be released under these unofficial version numbers at intervals to facilitate testers, but they will not be official releases.
+
+==Classilla 9.1==
+
+First official release version with the new layout engine. There is no current ETA. Further notes on this once work begins on "9.0.5."
+
+==Classilla 9.2==
+
+Future.
