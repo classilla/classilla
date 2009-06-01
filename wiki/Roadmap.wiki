@@ -24,6 +24,8 @@ These are placeholder versions for a planned update of the layout engine to the 
 
 Further security improvements will also be selected and applied from Bugzilla.
 
+Source code management glitches will be removed and debug builds will be enabled no later than this version, as both will be essential for analysis. SSL building from source should also be specifically fixed by 9.0.5.
+
 Because this update is extensive, it has no current timeline. Alpha versions will be released under these unofficial version numbers at intervals to facilitate testers, but they will not be official releases.
 
 ==Classilla 9.1==
