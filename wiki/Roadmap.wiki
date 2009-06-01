@@ -14,7 +14,7 @@ This version will be intentionally unfinished -- since WaMCoM is no more, this i
 
 ==Classilla 9.0.4==
 
-This will be the second release of Classilla. It will continue to add security improvements from Bugzilla, and is expected to have modest improvements to JavaScript. Layout improvements will be intentionally restricted to showstoppers only (see "9.0.5" for why). Various other MacOS-specific showstopper bugs will also be targetted for this release.
+This will be the second release of Classilla. It will continue to add security improvements from Bugzilla, and is expected to have modest improvements to !JavaScript. Layout improvements will be intentionally restricted to showstoppers only (see "9.0.5" for why). Various other MacOS-specific showstopper bugs will also be targetted for this release.
 
 The current roadmap envisions 9.0.4 being released for Q4 2009 or Q1 2010.
 
