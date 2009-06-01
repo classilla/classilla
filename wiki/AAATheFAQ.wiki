@@ -1,4 +1,4 @@
-#summary Frequently asked user questions.
+#summary Frequently asked user questions. READ ME FIRST!
 
 = FAQ =
 
