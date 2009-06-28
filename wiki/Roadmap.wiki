@@ -8,9 +8,9 @@ This document is always subject to change, but basically covers which version of
 
 ==Classilla 9.0==
 
-This will be the first release of Classilla with the updated "Clecko" layout engine. It is roughly the equivalent of Mozilla 1.5. This version will have the layout improvements and multiple security improvements, along with changes for rebranding and any Mac-specific bug fixes that can be inserted before ship date.
+This was the first release of Classilla with the updated "Clecko" layout engine. It is roughly the equivalent of Mozilla 1.6. This version had layout and multiple security improvements, along with changes for rebranding and Mac-specific bug fixes.
 
-This version will be intentionally unfinished -- since WaMCoM is no more, this is the only version of Mozilla for the classic Mac that even exists in theoretical form, so its release is being accelerated to ensure continuity. For that reason, it will be released "no matter what" on 1 July 2009.
+This version was intentionally unfinished -- since WaMCoM is no more, this is the only version of Mozilla for the classic Mac that even exists in theoretical form, so its release was accelerated to ensure continuity. For that reason, it was released in 'pre-alpha' form on July 1st, 2009.
 
 ==Classilla 9.0.4==
 
