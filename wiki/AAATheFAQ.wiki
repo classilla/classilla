@@ -1,5 +1,7 @@
 #summary Frequently asked user questions. READ ME FIRST!
 
+*Please don't modify this document unless you are authorized to do so.*
+
 = FAQ =
 
 This page will be for frequent user questions. Some of these are also answered on the main site, but are also here for convenient reference.
