@@ -12,7 +12,7 @@ In broad strokes, we need:
 
 ===Distillers===
 
-If you understand HTML (and particularly CSS) -- and JavaScript is a plus -- we have a use for you, even if you don't do that CodeWarrior thing.
+If you understand HTML (and particularly CSS) -- and !JavaScript is a plus -- we have a use for you, even if you don't do that !CodeWarrior thing.
 
 A *distiller* reviews bad sites, finds the problematic portions that Classilla isn't rendering or executing correctly, distills the individual problems into test cases (hence the name distiller), and hands the distilled bugs off to a coder to find a solution.
 
