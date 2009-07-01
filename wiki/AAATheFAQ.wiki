@@ -38,8 +38,7 @@ That depends on the devotion and hardwork of the maintainers, leads and programm
 ==How can I help with Classilla? I only know HTML.==
 You can still be a big help as a distiller. See [BeAPart].
 
-==How can I help with Classilla? I can help contribute code.==
-==And how do I build my own Classilla?==
+==How can I help with Classilla? I'd like to code and build my own.==
 To build your own Classilla on your own system, you need to set up a sane build environment. See HowToBuild.
 
 Once you have Classilla built and want to do your own stuff to send in, you have to obey certain conventions for code (and to ensure that resource forks are not trampled upon). See [BeAPart] and HowToSubmit.
@@ -47,6 +46,6 @@ Once you have Classilla built and want to do your own stuff to send in, you have
 ==My question is not answered by this document.==
 If you have a specific issue with Classilla which you think is a bug, look under the Issues tab for what the coders are currently working on.
 
-If you don't see a bug listed and you're sure you've found one, please use Report-A-Bug (don't file bugs here unless you are authorized to do so; Report-A-Bug allows a reviewer to triage your bug so that the worklist is more efficiently updated).
+If you don't see a bug listed and you're sure you've found one, please use Report-A-Bug (don't file bugs here unless you are authorized to do so; [http://www.classilla.org/report Report-A-Bug] allows a reviewer to triage your bug so that the worklist is more efficiently updated).
 
 If you have questions about Classilla or how it is administered, see http://www.classilla.org/ for how you can E-mail the project leads.
