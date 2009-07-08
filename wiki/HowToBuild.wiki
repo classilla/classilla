@@ -25,7 +25,7 @@ To properly install the !CodeWarrior environment,
   * In `mozilla:build:mac`, find RunTSScript and make sure it is a !CodeWarrior plugin with Get Info (if not, drop it on !StuffIt Expander and rename the resulting !AppleDouble file back to RunTSScript). Put it in `CodeWarrior Plugins:Compilers`. Later versions of the Classilla source should have this already converted for you, but I forgot to do so for 9.0.
   * Enable the !ToolServer menu in the !CodeWarrior IDE. Make sure it can start !ToolServer. Make sure all the !ToolServer tools show up (in particular !MakeStubs and DumpPEF). If not, chase down all the Tools folders, remove extraneous ones, and alias them to point to a central folder. This is critical for stubs.
   * The following libraries are needed if you don't already have them:
-    * Menu Sharing Toolkit. This is a part of [http://macbird.userland.com/download MacBird]. Unpack MacBird, then copy the MST portion into `MacOS Support:Menu Sharing Toolkit:`
+    * Menu Sharing Toolkit. This is a part of [http://macbird.userland.com/download MacBird]. Unpack !MacBird, then copy the MST portion into `MacOS Support:Menu Sharing Toolkit:`
     * ICProgKit. Unpack into `MacOS Support:ICProgKit1.4:` Later versions may work. If you can't find one, the 1.4 I use is on the Google Code site.
     * AEGizmos 1.4.2. Unpack into `MacOS Support:AEGizmos 1.4.2:` If you can't find this, the 1.4.2 I use is on the Google Code site. This used to be required, and may still be required for building direct from Mozilla code, so you may still want to install it.
     * Universal Interfaces. 3.4.1 should already be under `MacOS Support:Universal:` but if not, ftp://ftp.apple.com/developer/Development_Kits/
@@ -38,12 +38,12 @@ Build automation is operated with a complex !MacPerl script which functions esse
 
   * !MacPerl 5.2.0r4; get it from http://www.cpan.org/ports/index.html#macosclassic . I haven't tried 5.6.1 but I don't see any reason why it wouldn't work. There is no 5.8 or 5.10 for classic MacOS.
   * If you use 5.2.0r4 you will also need cpan-mac 0.50 or higher from http://sourceforge.net/projects/cpan-mac/ . This is allegedly not required for !MacPerl 5.6.1, but YMMV.
+  * Configure your Perl as instructed by the documentation (if needed). In particular, I recommend going to !MacPerl's preferences and selecting Run scripts from the Finder, instead of Edit them. It's a lot more convenient and you should probably do your editing in BBEdit anyway.
   * Next, install the following modules from http://backpan.perl.org/authors/id/C/CN/CNANDOR/ and http://www.cpan.org/modules/by-module/Archive/ . *Do not attempt to unpack them.* Drop them onto the CPAN installer applet instead (see the documentation) and they will be properly CRLF-ed and installed into the library directory. The parenthesized version is the one in use on the build system; otherwise use the latest available.
     * Compress::Zlib built for !MacPerl (1.04)
     * Archive::Zip built for !MacPerl (0.11)
     * Mac::!AppleEvents::Simple
     * Mac::Apps::Launch
-  * Configure your Perl as instructed by the documentation (if needed). In particular, I recommend going to !MacPerl's preferences and selecting Run scripts from the Finder, instead of Edit them. It's a lot more convenient and you should probably do your editing in BBEdit anyway.
   * Find your `site_perl` folder. From the Classilla source, look in `mozilla:build:mac:build_scripts`. Copy the `Moz` folder into your Perl's `site_perl` folder (you could also put it in `lib` but this is non-standard and not recommended). This installs the Mozilla-specific Perl modules needed to talk to !CodeWarrior and automate the build.
   * Find the `Mozilla build prefs` folder (this should be in the root, _not_ under `mozilla`). Drag this folder into your `System Folder:Preferences` folder. This is preconfigured for the options still supported in the Classilla build system.
   * Run `ClassillaFixAliases.pl` in the root folder. Ignore files it can't find for now. Resolve any ambiguous duplicates. This ensures that the current header files are in sync with their aliases.
@@ -70,7 +70,7 @@ When you do future builds with a partially built system, you don't need to wait 
 To make a Classilla that can run on a different computer, it is not sufficient to merely copy the Classilla executable as the shlbs must come along with it. To make this process easier, Classilla includes `ClassillaGenerateDist.pl` that finds all the dependencies, copies them and groups them into a folder that you can immediately copy away. The only problem is that this can mess up your alias structure if you're not careful. I recommend:
 
    * When preparing to run off a standalone build, run `ClassillaFixAliases.pl` and make sure that all aliases are valid and pointing to valid files. Fix any ambiguities and make sure aliases that were not found are corrected before proceeding.
-   * Run `ClassillaGenerateDist.pl`. In the `mozilla:dist:` folder will be a `Classilla` folder containing a completely standalone set of files. You can drop this folder on Make SMI or DropStuff to create an archive, or copy it to another system.
+   * Run `ClassillaGenerateDist.pl`. In the `mozilla:dist:` folder will be a `Classilla` folder containing a completely standalone set of files. You can drop this folder on Make SMI or !DropStuff to create an archive, or copy it to another system.
    * When this is done, *delete the Classilla standalone distribution folder*, empty the Trash and re-run `ClassillaFixAliases.pl` to make sure the aliases are still correct and have not been tainted to mistakenly point into the Classilla standalone directory which you just deleted.
 
 ==Troubleshooting==
@@ -89,7 +89,7 @@ Switch to !CodeWarrior and keep it in the foreground. !MacPerl's event handling 
 
 *!CodeWarrior freezes while building stubs.*
 
-Make sure RunTSScript got installed correctly, but even if it is, !CodeWarrior sometimes can't start ToolServer if it's the front process. Switch to the Finder and it should start up or go clicking around the screen to prime the Apple Events chain. You might need to do this again even after !ToolServer starts, because to build the stubs !ToolServer has to run _twice_. A tool like !LiteSwitch is perfect for this, btw; just go switching into random other apps to flush Events and unstick the process.
+Make sure RunTSScript got installed correctly, but even if it is, !CodeWarrior sometimes can't start !ToolServer if it's the front process. Switch to the Finder and it should start up or go clicking around the screen to prime the Apple Events chain. You might need to do this again even after !ToolServer starts, because to build the stubs !ToolServer has to run _twice_. A tool like !LiteSwitch is perfect for this, btw; just go switching into random other apps to flush Events and unstick the process.
 
 Alternatively, this sometimes happens if you have !ToolServer running before the script expects to start it up. Stop the script, stop !ToolServer, and restart the build.
 
