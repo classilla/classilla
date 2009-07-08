@@ -77,11 +77,15 @@ To make a Classilla that can run on a different computer, it is not sufficient t
 
 *Debug builds don't work.*
 
-Yup, they don't. Don't try to run `BuildMozillaDebug.pl` yet. I intend to get this fixed again for 9.0.5.
+Yup, they definitely don't. Don't try to run `BuildMozillaDebug.pl` yet. I intend to get this fixed again for 9.0.5.
 
 *Carbon builds don't work.*
 
-Yup, they don't, and they will not be supported. Eventually the old Fizzilla support will be expunged.
+Yup, they probably don't, and they will not be supported. Eventually the old Fizzilla support will be expunged if there is no call for it, and currently only classic CFM code is being written.
+
+*The build script can't find !CodeWarrior.*
+
+Trash `CodeWarrior IDE Path.txt` and see if the script can re-detect it.
 
 *During the manifest stage, I see several spurious errors.*
 
