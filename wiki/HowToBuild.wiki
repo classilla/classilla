@@ -116,3 +116,13 @@ DumpPEF, replace it with the one from 3.3.2 and see if that helps. You may need 
 *!CodeWarrior can't find a lot of .h files but they are there.*
 
 Usually means (a) bad alias(es). Run `ClassillaFixAliases.pl` and make sure everything points where it should. This typically occurs the *second* time around.
+
+*!CodeWarrior freezes up while building large shlbs.*
+
+It's probably not frozen actually. For things like the layout shared library, the optimization step may take as long as several minutes on slower or more memory-impaired systems. During this process your computer may appear to lock up. Just be patient.
+
+Btw, this is *not improved by giving !CodeWarrior more RAM in Get Info.* In fact, you may make this *worse* by taking away temporary memory from the system, which is what !CodeWarrior grabs during the compile process. However, you may get more oomph out of this by putting in more _physical_ RAM and turning off Virtual Memory.
+
+*There sure are a lot of warnings.*
+
+There sure are. (The record is layout: from a fresh build you may see nearly 3000 warnings, and even from a simple relinking you get a minimum 2k.) When I have nothing to do, I'll fix them. (/me smiles sweetly)
