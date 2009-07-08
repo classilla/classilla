@@ -1,4 +1,4 @@
-#summary How to set up the Classilla build environment.
+#summary How to set up the Classilla build environment
 
 ===Read these directions thoroughly before you even download the source archive! Otherwise you will waste a lot of time and sweat!===
 
