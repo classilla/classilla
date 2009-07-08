@@ -79,6 +79,10 @@ To make a Classilla that can run on a different computer, it is not sufficient t
 
 Yup, they don't. Don't try to run `BuildMozillaDebug.pl` yet. I intend to get this fixed again for 9.0.5.
 
+*Carbon builds don't work.*
+
+Yup, they don't, and they will not be supported. Eventually the old Fizzilla support will be expunged.
+
 *During the manifest stage, I see several spurious errors.*
 
 This is normal for the Mac OS 9 build. They are harmless.
@@ -97,7 +101,7 @@ In general, I find that the stubs build most reliably if you start the build scr
 
 *The runtime will not build (compiler or linker errors).*
 
-This usually means the stubs are defective. Look in `mozilla:dist:client_stubs` and check the size of NSStdLibStubs (should be around 24K) and !InterfacesStubs (should be around 300K). An abnormally small NSStdLibStubs (8K or less) usually indicates a bad stub and means !ToolServer probably did not run. Use !ToolServer to try to dump the stub with DumpPEF if you're not sure. Ignore InterfacesXStubs, this is a holdover from Fizzilla and will disappear in the future. Make sure that you installed RunTSScript correctly as well.
+This usually means the stubs are defective. Look in `mozilla:dist:client_stubs` and check the size of NSStdLibStubs (should be around 24K) and !InterfacesStubs (should be around 300K). An abnormally small NSStdLibStubs (8K or less) usually indicates a bad stub and means !ToolServer probably did not run. Use !ToolServer to try to dump the stub with DumpPEF if you're not sure. Ignore InterfacesXStubs, this is a holdover from Fizzilla and will disappear in the future. Make sure that you installed RunTSScript, !PowerPlant and any other libraries correctly as well.
 
 Also, some people have reported problems with 3.4.1 Universal Interfaces' !ContextualMenu
 stub library. If your NSStdLibStubs and !InterfacesStubs appear good and look valid to
