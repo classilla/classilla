@@ -1,4 +1,4 @@
-#summary How to properly submit your code changes to the project.
+#summary How to properly submit your code changes to the project
 
 ==You suck, there's no code repository!==
 
