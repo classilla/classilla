@@ -8,11 +8,13 @@ One nice change in later Mozillas which probably will take a lot of work for Cla
 
 The good news is that for many of these newer simplified functions, there are specific one-to-one mappings for older code, which we'll be adding to this wiki page for the benefit of people working on backports. The functionality is usually there, it just needs to be written out in longhand. This is particularly relevant for layout patches (poop!) where the most work on function cleanup has occurred.
 
+Eventually there will be new functions rolled for these once someone gets a round tuit.
+
 Here are our cheat sheet notes so far:
 
 - There is no equivalent (yet) for `GetPresContext()` -- you need to pass the current `nsIPresContext` into any such functions.
 
-- `GetStateBits()` and `AddStateBits()` should be replaced by manipulating the state bits (usually in `mState`) directly. Eventually we'll roll macros for this; there is an issue already about it but it's low priority currently.
+- `GetStateBits()` and `AddStateBits()` should be replaced by manipulating the state bits (usually in `mState`) directly.
 
 - `GetStyleDisplay()` for frames:
 {{{
