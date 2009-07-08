@@ -20,6 +20,12 @@ Here are our cheat sheet notes so far:
     frame->GetStyleData(eStyleStruct_Display, (const nsStyleStruct*&)disp);
 }}}
 
+- `GetStyleText()` for frames:
+{{{
+    const nsStyleText* styleText;
+    frame->GetStyleData(eStyleStruct_Text, (const nsStyleStruct *&)styleText);
+}}}
+
 - `IsEmpty()`
 
 {{{
