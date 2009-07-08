@@ -1,3 +1,23 @@
 #summary How to properly submit your code changes to the project.
 
-(coming)
+==You suck, there's no code repository!==
+
+One specific problem that classic Mac OS development has relative to other operating systems is that resource forks are not preserved with current revision control systems. Yes, you can use encodings like !AppleSingle, but this is an extra step which slows things down, and fraught with peril if you forget to do the conversion because many tools won't warn you if there are no valid resources.
+
+Until this issue is resolved to our satisfaction (and believe me we'll take any and all suggestions), there is no externally accessible code repository and thus you can't do checkins from outside Floodgap. This document talks about how to work around this problem.
+
+==How to properly submit patches==
+
+All checkins are done on your behalf by a lead (currently this is Cameron) from your submissions into a private internal source tree. Your submission should obey the following constraints:
+
+  * Please make sure your patch builds! Openly defective code is not nice!
+
+  * Please verify that you are not patching actively worked on code (for example layout and DOM patches are always at risk of being obsoleted by something else somebody else is working on). If you don't know, ask a lead.
+
+  * Resource forks (if any) and type/creator codes must be sane and must be preserved. For example, keep all C/C++ header and source files owned by !CodeWarrior (CWIE). For other things such as style sheets, DTDs, !JavaScript, XUL, etc., we'd prefer them be TEXT/R*ch so that they open up in BBEdit, but as long as they're TEXT/something, that is acceptable. Resource files should open in !ResEdit. Files that should be owned/opened by Classilla should always be creator MOZZ. For all other files, use your judgment.
+
+  * Include a minimum of files, with context. For example, if you only need to change two files in a source folder, tell us (either in the filename or in your comments on the submission) where the files should go, and _include only those files._
+
+  * Compress and archive your patch with an approved archiving method. Even though Mactar is resource-fork aware, this requires a lot of fiddling to do proper conversion, so please don't use it. The best choice is !StuffIt 5-format; if you don't have !StuffIt Standard or Deluxe to do this, !DiskCopy 4.2 is also acceptable, or an SMI (using a tool like MakeSMI). *Do not use ZIP!* You may, however, choose to zip up or gzip the resulting disk image, and that is fine.
+
+  * Attach your patch to the issue in question, along with a description of the files and where they go. The bug owner will (if a lead) review and check in your patch, or (if not a lead) notify a lead for a code review once they have confirmed the patch builds.
