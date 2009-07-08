@@ -6,13 +6,15 @@ One specific problem that classic Mac OS development has relative to other opera
 
 Until this issue is resolved to our satisfaction (and believe me we'll take any and all suggestions), there is no externally accessible code repository and thus you can't do checkins from outside Floodgap. This document talks about how to work around this problem.
 
-==How to properly submit patches==
+==How to properly submit code changes==
 
 All checkins are done on your behalf by a lead (currently this is Cameron) from your submissions into a private internal source tree. Your submission should obey the following constraints:
 
-  * Please make sure your patch builds! Openly defective code is not nice!
+  * Please make sure your code builds! Openly defective code is not nice!
 
-  * Please verify that you are not patching actively worked on code (for example layout and DOM patches are always at risk of being obsoleted by something else somebody else is working on). If you don't know, ask a lead.
+  * Please verify that you are not modifying actively worked on code (for example layout and DOM code are always at risk of being obsoleted by something else somebody else is working on). If you don't know, ask a lead.
+
+  * Actual, full files are easier to work with than `diff`ed patches. Although there is an MPW tool for Larry Wall-ified `patch`es, it can be a little fiddly to work with, much like the Unix `patch` ;-) That said, if you are working on actively developed code, a true patch may be requested instead of a full file to integrate better into changes other people are making. Ask a lead if you don't know what to do.
 
   * Resource forks (if any) and type/creator codes must be sane and must be preserved. For example, keep all C/C++ header and source files owned by !CodeWarrior (CWIE). For other things such as style sheets, DTDs, !JavaScript, XUL, etc., we'd prefer them be TEXT/R*ch so that they open up in BBEdit, but as long as they're TEXT/something, that is acceptable. Resource files should open in !ResEdit. Files that should be owned/opened by Classilla should always be creator MOZZ. For all other files, use your judgment.
 
