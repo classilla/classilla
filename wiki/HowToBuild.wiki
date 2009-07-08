@@ -65,6 +65,8 @@ Test your build by going to `mozilla:dist:viewer` and double-clicking Classilla.
 
 When you do future builds with a partially built system, you don't need to wait the full 90+ minutes to do the build; only the parts that need to be updated will be done. You can also build shared libraries directly from their own individual !CodeWarrior projects without invoking the entire build process, which is much quicker, and they will be incorporated into your test Classilla simply by quitting and restarting the browser.
 
+Old Mozilla hands will wonder where the part that converted the exported XML project files into MCPs went. It's still there, but the MCPs now come pre-converted since everything is only being built on Mac !CodeWarrior. Eventually this will be removed from the build process also, since it's just unnecessary bulk.
+
 ==Running off a standalone build==
 
 To make a Classilla that can run on a different computer, it is not sufficient to merely copy the Classilla executable as the shlbs must come along with it. To make this process easier, Classilla includes `ClassillaGenerateDist.pl` that finds all the dependencies, copies them and groups them into a folder that you can immediately copy away. The only problem is that this can mess up your alias structure if you're not careful. I recommend:
