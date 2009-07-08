@@ -2,12 +2,14 @@
 
 ===Read these directions thoroughly before you even download the source archive! Otherwise you will waste a lot of time and sweat!===
 
-This is mostly based on http://www-archive.mozilla.org/build/mac_cfm.html with my own notes.
+This is mostly based on http://www-archive.mozilla.org/build/mac_cfm.html with my own notes. I'm trying to remember all the gotchas I encountered initially getting this running; please make comments as you encounter your own glitches.
+
+*This document will change in several significant ways for Classilla 9.0.4 and later versions, so you should expect it to be obsolete after that version is released. This only covers building the original Classilla 9.0 source.*
 
 ==Prerequisites==
 
 ===Hardware/OS===
-The build environment is currently only supported on OS 9.0.4 and higher (9.1 or 9.2 recommended). It will probably build on OS 8.6 but this is considered serendipitous.
+The build environment is currently only supported on OS 9.0.4 and higher (9.1 or 9.2 recommended). It will probably build on OS 8.6 but this is considered serendipitous. I haven't tested trying to build on OS X and it would probably require some radical changes anyway.
 
 You should have ample RAM and CPU: a G4 and at least 256MB is recommended. Currently the binary builds are made on a dual 1.25GHz G4, the most powerful Power Mac that can boot OS 9 directly, with 2GB of RAM (1.5GB available to OS 9). A simple relinking takes about 15 minutes; a complete build from utter scratch needs around 90 minutes. Do the math for your own box.
 
@@ -19,7 +21,8 @@ You should not have multiple copies of MPW on your build system; only use the on
 
 To properly install the !CodeWarrior environment,
   * Run the installer(s) and select a stock full Mac C/C++ installation (Mach-O is not required; you can install that and/or Win32 if you want). Make sure that !PowerPlant, the !CodeWarrior Plugin SDK and !CodeWarrior MPW are installed.
-  * Unpack the Classilla source. *This is over 30,000 files. It is strongly recommended you do this on a separate, HFS+-formatted partition or disk other than your boot volume.* In `mozilla:build:mac`, grab RunTSScript and make sure it is a !CodeWarrior plugin with Get Info (if not, drop it on !StuffIt Expander and rename the resulting !AppleDouble file back to RunTSScript). Put it in `CodeWarrior Plugins:Compilers`.
+  * Unpack the Classilla source. *This is almost 30,000 files. It is strongly recommended you do this on a separate, HFS+-formatted partition or disk other than your boot volume.*
+  * In `mozilla:build:mac`, find RunTSScript and make sure it is a !CodeWarrior plugin with Get Info (if not, drop it on !StuffIt Expander and rename the resulting !AppleDouble file back to RunTSScript). Put it in `CodeWarrior Plugins:Compilers`. Later versions of the Classilla source should have this already converted for you, but I forgot to do so for 9.0.
   * Enable the !ToolServer menu in the !CodeWarrior IDE. Make sure it can start !ToolServer. Make sure all the !ToolServer tools show up (in particular !MakeStubs and DumpPEF). If not, chase down all the Tools folders, remove extraneous ones, and alias them to point to a central folder. This is critical for stubs.
   * The following libraries are needed if you don't already have them:
     * Menu Sharing Toolkit. This is a part of [http://macbird.userland.com/download MacBird]. Unpack MacBird, then copy the MST portion into `MacOS Support:Menu Sharing Toolkit:`
@@ -27,6 +30,9 @@ To properly install the !CodeWarrior environment,
     * AEGizmos 1.4.2. Unpack into `MacOS Support:AEGizmos 1.4.2:` If you can't find this, the 1.4.2 I use is on the Google Code site. This used to be required, and may still be required for building direct from Mozilla code, so you may still want to install it.
     * Universal Interfaces. 3.4.1 should already be under `MacOS Support:Universal:` but if not, ftp://ftp.apple.com/developer/Development_Kits/
     * WASTE should already be under `MacOS Support:(Third Party Support):WASTE 2.0 Distribution:`
+    * You do not need to install GUSI, `zlib` or `libpng` separately; Classilla already comes with its own copy of what it requires. Do not link Classilla against any other version of these libraries that you might have on your system (the project files by default will prevent this).
+
+I also suggest installing a copy of Make SMI or some similiar drag-and-compress tool for running off complete builds, as it makes packaging for distribution much easier.
 
 Build automation is operated with a complex !MacPerl script which functions essentially as the _make_ system. This requires some setup:
 
@@ -37,10 +43,66 @@ Build automation is operated with a complex !MacPerl script which functions esse
     * Archive::Zip built for !MacPerl (0.11)
     * Mac::!AppleEvents::Simple
     * Mac::Apps::Launch
-  * Find your `site_perl` folder. From the Classilla source, look in `mozilla:build:mac:build_scripts`. 
-
-(more coming)
+  * Configure your Perl as instructed by the documentation (if needed). In particular, I recommend going to !MacPerl's preferences and selecting Run scripts from the Finder, instead of Edit them. It's a lot more convenient and you should probably do your editing in BBEdit anyway.
+  * Find your `site_perl` folder. From the Classilla source, look in `mozilla:build:mac:build_scripts`. Copy the `Moz` folder into your Perl's `site_perl` folder (you could also put it in `lib` but this is non-standard and not recommended). This installs the Mozilla-specific Perl modules needed to talk to !CodeWarrior and automate the build.
+  * Find the `Mozilla build prefs` folder (this should be in the root, _not_ under `mozilla`). Drag this folder into your `System Folder:Preferences` folder. This is preconfigured for the options still supported in the Classilla build system.
+  * Run `ClassillaFixAliases.pl` in the root folder. Ignore files it can't find for now. Resolve any ambiguous duplicates. This ensures that the current header files are in sync with their aliases.
 
 ==How to compile==
 
-(more coming)
+If you did all this right, go into `mozilla:build:mac:build_scripts` and double-click `BuildMozilla.pl`. Perl will start up and start !CodeWarrior in the background, and then do the following:
+
+  * Manifest stage, where it determines what will be copied where.
+  * Builds the `xpidl` tools to compile IDLs and headers. These are automatically installed for you under !CodeWarrior. *The very first time you try to do a build, it will die after this point because !CodeWarrior won't register the tool without a restart. Quit !CodeWarrior and !MacPerl, then restart the build script. You should never see this again.* If you can't get past this point, your !CodeWarrior is not set up right and you should go through the directions above again to figure out why.
+  * Compiles the IDLs and headers. If you can't get past this point, there is something wrong with the `xpidl` project file.
+  * Compiles the OS stub library. This is a critical and somewhat iffy step. If you have multiple !ToolServers, or your !ToolServer cannot see all the tools it needs, you may fail at this point (or possibly slightly later when !CodeWarrior tries to link against the defective stub). If !ToolServer doesn't even start, you probably blew it installing RunTSScript, or failed to convert it into a proper plugin that !CodeWarrior will recognize.
+  * Compiles the runtime. If this fails, it may also be the stub.
+  * Compiles the crossplatform code. This is the longest part of the build process. If the first few shlbs come off like winners, you are likely to complete the build successfully.
+  * Compiles the actual application ("apprunner").
+  * Links in and jars chrome resources.
+
+Test your build by going to `mozilla:dist:viewer` and double-clicking Classilla. If it starts, congratulations. You might want to try running it in the !CodeWarrior debugger by opening the `_apprunner.mcp` project, choosing the `apprunner` Target and selecting Debug from there if you are not sure that it will be stable on your system.
+
+When you do future builds with a partially built system, you don't need to wait the full 90+ minutes to do the build; only the parts that need to be updated will be done. You can also build shared libraries directly from their own individual !CodeWarrior projects without invoking the entire build process, which is much quicker, and they will be incorporated into your test Classilla simply by quitting and restarting the browser.
+
+==Running off a standalone build==
+
+To make a Classilla that can run on a different computer, it is not sufficient to merely copy the Classilla executable as the shlbs must come along with it. To make this process easier, Classilla includes `ClassillaGenerateDist.pl` that finds all the dependencies, copies them and groups them into a folder that you can immediately copy away. The only problem is that this can mess up your alias structure if you're not careful. I recommend:
+
+   * When preparing to run off a standalone build, run `ClassillaFixAliases.pl` and make sure that all aliases are valid and pointing to valid files. Fix any ambiguities and make sure aliases that were not found are corrected before proceeding.
+   * Run `ClassillaGenerateDist.pl`. In the `mozilla:dist:` folder will be a `Classilla` folder containing a completely standalone set of files. You can drop this folder on Make SMI or DropStuff to create an archive, or copy it to another system.
+   * When this is done, *delete the Classilla standalone distribution folder*, empty the Trash and re-run `ClassillaFixAliases.pl` to make sure the aliases are still correct and have not been tainted to mistakenly point into the Classilla standalone directory which you just deleted.
+
+==Troubleshooting==
+
+*Debug builds don't work.*
+
+Yup, they don't. Don't try to run `BuildMozillaDebug.pl` yet. I intend to get this fixed again for 9.0.5.
+
+*During the manifest stage, I see several spurious errors.*
+
+This is normal for the Mac OS 9 build. They are harmless.
+
+*!MacPerl freezes when starting !CodeWarrior for the first time.*
+
+Switch to !CodeWarrior and keep it in the foreground. !MacPerl's event handling gets a little daft if it's foregrounded. It's also a lot faster if you keep !CodeWarrior front, at least until you get to Stubs (see below).
+
+*!CodeWarrior freezes while building stubs.*
+
+Make sure RunTSScript got installed correctly, but even if it is, !CodeWarrior sometimes can't start ToolServer if it's the front process. Switch to the Finder and it should start up or go clicking around the screen to prime the Apple Events chain. You might need to do this again even after !ToolServer starts, because to build the stubs !ToolServer has to run _twice_. A tool like !LiteSwitch is perfect for this, btw; just go switching into random other apps to flush Events and unstick the process.
+
+Alternatively, this sometimes happens if you have !ToolServer running before the script expects to start it up. Stop the script, stop !ToolServer, and restart the build.
+
+In general, I find that the stubs build most reliably if you start the build script and then _don't touch anything_ until stubs are built.
+
+*The runtime will not build (compiler or linker errors).*
+
+This usually means the stubs are defective. Look in `mozilla:dist:client_stubs` and check the size of NSStdLibStubs (should be around 24K) and !InterfacesStubs (should be around 300K). An abnormally small NSStdLibStubs (8K or less) usually indicates a bad stub and means !ToolServer probably did not run. Use !ToolServer to try to dump the stub with DumpPEF if you're not sure. Ignore InterfacesXStubs, this is a holdover from Fizzilla and will disappear in the future. Make sure that you installed RunTSScript correctly as well.
+
+Also, some people have reported problems with 3.4.1 Universal Interfaces' !ContextualMenu
+stub library. If your NSStdLibStubs and !InterfacesStubs appear good and look valid to
+DumpPEF, replace it with the one from 3.3.2 and see if that helps. You may need to completely rebuild the stub libraries for this to take.
+
+*!CodeWarrior can't find a lot of .h files but they are there.*
+
+Usually means (a) bad alias(es). Run `ClassillaFixAliases.pl` and make sure everything points where it should. This typically occurs the *second* time around.
