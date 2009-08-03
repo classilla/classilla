@@ -83,7 +83,7 @@ Yup, they definitely don't. Don't try to run `BuildMozillaDebug.pl` yet. I inten
 
 *Carbon builds don't work.*
 
-Yup, they probably don't, and they will not be supported. Eventually the old Fizzilla support will be expunged if there is no call for it, and currently only classic CFM code is being written.
+Yup, they probably don't. I don't have any plans to support Carbon builds, but I have received some requests to maintain the targets even if they do not build currently. This might be examined later, but it is low priority.
 
 *The build script can't find !CodeWarrior.*
 
