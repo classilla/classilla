@@ -44,9 +44,9 @@ Currently, however, the highest priority is making sure that HTML 4.01 and CSS 2
 That depends on the devotion and hardwork of the maintainers, leads and programmers. We're always looking for a few good Mac nerds.
 
 ==Can I run Classilla on OS X?==
-Yes. If you are using a very old version of OS X such as 10.0 or 10.1, Classilla may be the best browser option for you, but you must run it in Classic as it is not Carbonized. If you are using 10.2, however, you should probably consider Firefox 2 as its compatibility is currently better than Classilla, and if you are using 10.3 Camino 1.6.x is a far better choice and currently supported. 10.4 is currently supported by all major browsers.
+Yes. In fact, Classilla may be the best browser option for you if you are running a very old version of OS X such as 10.0 or 10.1, but you must run it in Classic as it is not Carbonized. If you are using 10.2, however, you should probably consider Firefox 2 as its compatibility is currently better than Classilla, and if you are using 10.3 Camino 1.6.x is a far better choice and currently supported. 10.4 is currently supported by all major browsers.
 
-Classilla will not run at all on 10.5 or later (due to the loss of Classic), or on any Intel Macintosh, except under emulators such as !ShapeShifter.
+Classilla will not run at all on 10.5 or later (due to the loss of Classic), or on any Intel Macintosh, except under emulators such as !SheepShaver. It does not run under Basilisk II, because that is a 68K Mac emulator (see the next question).
 
 ==Can I run Classilla on a 68K Macintosh?==
 No. Classilla is currently built with a version of !CodeWarrior that only supports PowerPC, and relies on certain specific features of OS 8.5 and later such as Unicode support. It is possible to backport these features to OS 8.1 or possibly earlier, but that task is demonstrably non-trivial, and the memory demands may seriously restrict which machines could run Classilla even if those constraints were otherwise met.
