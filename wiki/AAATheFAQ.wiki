@@ -10,13 +10,15 @@ This page will be for frequent user questions. Some of these are also answered o
 ==What is Classilla?==
 Classilla is an updated open-source Mozilla-based web browser for the classic Macintosh OS (not Mac OS X, although it will run under Classic through 10.4). It is targeted for Mac OS 9, but will include 8.6 compatibility where possible.
 
+The name is, naturally, a portmanteau of _Classic_ (for the classic MacOS) and _Mozilla_.
+
 ==What is Mozilla?==
 Mozilla is the force behind the Gecko layout engine, which powers (among others) Mozilla Firefox, currently the second most popular web browser in the world behind Microsoft Internet Explorer. This makes it a very popular foundation for building other browsers and browser-like software upon.
 
 ==What is Clecko?==
 Clecko is the fork of Gecko used in Classilla. Mozilla ended official Mac OS 9 support with 1.2, although versions through 1.3.1 would still generally build if the patches for OS X (the old Fizzilla build) were removed. 
 
-Because Mozilla 1.4 and up include so much OS X specific code that does not work with the !CarbonLib available for Mac OS 9, the decision was made to split Gecko off at 1.3.1 (using the Gecko that was maintained in the venerable old WaMCom build) and backport later changes to it rather than use the Mozilla code base directly, which wouldn't build. This version of Gecko thus has a significantly different lineage despite having a common ancestor. To avoid confusion with the main Gecko, even though this forked Gecko is still almost all official Mozilla code, Classilla's version of Gecko was renamed Clecko.
+Because Mozilla 1.4 and up include so much OS X specific code that won't work with the !CarbonLib available for Mac OS 9, the decision was made to split Gecko off at 1.3.1 (using the Gecko that was maintained in the venerable old WaMCom build) and backport later changes to it rather than use the Mozilla code base directly, which won't build. This version of Gecko thus has a significantly different lineage despite having a common ancestor, and while its sources are similar, its provenance and feature set are therefore necessarily different. To avoid confusion with the main Gecko, even though this forked Gecko is still mostly official Mozilla code, Classilla's version of Gecko was renamed Clecko.
 
 ==What was WaMCom?==
 WaMCom was Kai Engert's maintained version of Mozilla 1.3.1; the Mac build of WaMCom is the direct ancestor of Classilla. It is no longer supported or developed.
@@ -33,10 +35,10 @@ Strictly speaking [http://bugzilla.mozilla.org/ Bugzilla] refers to either the B
 Again, you should *not* file Bugzilla issues for Classilla.
 
 ==Does Classilla support Flash?==
-Yes, but OS 9 support was dropped after Flash 7. *There are known security problems in that version of Adobe Flash Player and its use is discouraged.* Still, this is enough to surf many sites and even view many videos, although people have reported synchronization issues with certain codecs. Your humble author, however, does not use it.
+Yes, but OS 9 support was dropped after Flash 7. *There are known security problems in that version of Adobe Flash Player and its use is strongly discouraged.* Still, this is enough to surf many sites and even view many videos, although people have reported synchronization issues with certain codecs. Your humble author, however, does not use it.
 
 ==Will Classilla support HTML 5?==
-Certain portions will be supported (and some actually already are invisibly). The most visible features such as CANVAS tags, however, will require extensive work for Clecko's non-Cairo-based graphics architecture, and features such as VIDEO and AUDIO tags may never be supported due to poor codec availability for OS 9. Networking support may also be difficult to integrate with the older Clecko codebase. On the other hand, most document-based tags are easy to incorporate into Classilla's parser and many of these will be supported.
+Certain portions will be supported (and some actually already are invisibly). The most visible features such as CANVAS tags, however, will require extensive work for Clecko's non-Cairo-based graphics architecture, and features such as VIDEO and AUDIO tags may never be supported due to poor codec availability for OS 9. Networking support may also be difficult to integrate with the older Clecko codebase. There are no promises, let alone an ETA, for any of these features. On the other hand, most document-based tags are easy to incorporate into Classilla's parser and many of these are or will be supported.
 
 Currently, however, the highest priority is making sure that HTML 4.01 and CSS 2 are supported to a functional level; this is incomplete, but improving.
 
@@ -46,7 +48,9 @@ That depends on the devotion and hardwork of the maintainers, leads and programm
 ==Can I run Classilla on OS X?==
 Yes. In fact, Classilla may be the best browser option for you if you are running a very old version of OS X such as 10.0 or 10.1, but you must run it in Classic as it is not Carbonized. If you are using 10.2, however, you should probably consider Firefox 2 as its compatibility is currently better than Classilla, and if you are using 10.3 Camino 1.6.x is a far better choice and currently supported. 10.4 is currently supported by all major browsers.
 
-Classilla will not run at all on 10.5 or later (due to the loss of Classic), or on any Intel Macintosh, except under emulators such as !SheepShaver. It does not run under Basilisk II, because that is a 68K Mac emulator (see the next question).
+Please note that depending on your version of OS X, the Classic environment may (in some cases noticibly) degrade Classilla's performance. Classilla is naturally always fastest in a native, non-emulated environment.
+
+To run Classilla on an Intel Macintosh or on 10.5 or later, since neither support Classic, you must use an emulator such as !SheepShaver. Although it is not officially supported, people have used Classilla on !SheepShaver and demonstrated that it runs well. !SheepShaver on BeOS is also compatible. Again, its performance under emulation may be significantly impacted. Classilla does not run under Basilisk II, because that is a 68K Mac emulator (see the next question).
 
 ==Can I run Classilla on a 68K Macintosh?==
 No. Classilla is currently built with a version of !CodeWarrior that only supports PowerPC, and relies on certain specific features of OS 8.5 and later such as Unicode support. It is possible to backport these features to OS 8.1 or possibly earlier, but that task is demonstrably non-trivial, and the memory demands may seriously restrict which machines could run Classilla even if those constraints were otherwise met.
