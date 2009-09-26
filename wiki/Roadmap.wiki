@@ -18,24 +18,35 @@ This will be the second release of Classilla. It will continue to add security a
 
 Please note that due to the large lag in Mozilla on OS 9, this version will still have known bugs (just less, and much fewer fatal ones).
 
-Classilla 9.0.4 has an expected release date of October-November 2009.
+Classilla 9.0.4 has an expected release date of November 1, 2009.
 
 ==Classilla 9.0.5 through 9.0.9==
 
 These are placeholder versions for a planned update of the !JavaScript interpreter engine. Further security improvements will also be selected and applied from Bugzilla.
 As this is a low-level change and may induce new bugs, this is being done on "beta" versions for testing, with 9.0.4 remaining on !JavaScript 1.5 as the stable version.
 
+*Milestone 9.0.5*: Remove Chatzilla; update !JavaScript to Mozilla 1.8.1.x (or 1.9.1.x if possible). All security patches for core JS engine should be applied.
+
+*Milestone 9.0.6*: Complete transformation of !NoScript into Script-B-Gone, with new interface (including "one click enable for all scripts on current URL"). Continue security update.
+
+*Milestone 9.0.7*: Beta prior to 9.1. There should be no outstanding security issues by this milestone.
+
+*Milestone 9.0.8*: If needed.
+
+*Milestone 9.0.9*: If needed.
+
 ==Classilla 9.1==
 
-First official release version with updated !JavaScript internals. Other changes may be landed for this version. There is no ETA at this time.
+First official release version with updated !JavaScript internals. *_This version will achieve the core goal of a fully secure classic Mac OS browser._* Other changes may be landed for this version. There is no ETA at this time.
 
 ==Classilla 9.1.1 through 9.1.9==
 
-These are placeholder versions for a planned update of the layout engine with an eye towards Acid2 compliance. Debug building will be specifically fixed by this version to facilitate layout study. This may require the large patch in Bugzilla 300030 along with other specific large scale changes, hence the protracted testing period. These versions will also be "beta" with 9.1 remaining on the old layout system as the stable version.
+These are placeholder versions for a planned update of the layout engine with an eye towards improved Acid2 compliance. Debug building will be specifically fixed by this version to facilitate layout study. These versions will also be "beta" with 9.1 remaining on the old layout system as the stable version.
+
+*Milestone 9.1.1*: Pull up all content/layout code to minimum Mozilla 1.7.1.x. Backport all previously applied 1.8 and 1.9 updates (especially M209694 and subsequent regression fixes). Make sure no DOM regressions are introduced.
+
+*Milestone 9.1.2 through 9.1.9*: Under consideration.
 
 ==Classilla 9.2==
 
-First official release with updated layout. Other changes may be landed for this version, including any new changes to !JavaScript if possible. There is no ETA at this time.
-
-==Classilla 9.2.1, 9.2.2, ... ?==
-Future versions are currently under consideration.
+Future.
