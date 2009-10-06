@@ -43,7 +43,7 @@ First official release version with updated !JavaScript internals. *_This versio
 
 These are placeholder versions for a planned update of the layout engine with an eye towards improved Acid2 compliance. Debug building will be specifically fixed by this version to facilitate layout study. These versions will also be "beta" with 9.1 remaining on the old layout system as the stable version.
 
-*Milestone 9.1.1*: Pull up all content/layout code to minimum Mozilla 1.7.1.x. Backport all previously applied 1.8 and 1.9 updates (especially M209694 and subsequent regression fixes). Make sure no DOM regressions are introduced.
+*Milestone 9.1.1*: Clean up code, remove low-risk history blocks to reduce code size. Fix debug builds.
 
 *Milestone 9.1.2 through 9.1.9*: Under consideration.
 
