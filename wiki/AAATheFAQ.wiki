@@ -21,7 +21,7 @@ Clecko is the fork of Gecko used in Classilla. Mozilla ended official Mac OS 9 s
 Because Mozilla 1.4 and up include so much OS X specific code that won't work with the !CarbonLib available for Mac OS 9, the decision was made to split Gecko off at 1.3.1 (using the Gecko that was maintained in the venerable old WaMCom build) and backport later changes to it rather than use the Mozilla code base directly, which won't build. This version of Gecko thus has a significantly different lineage despite having a common ancestor, and while its sources are similar, its provenance and feature set are therefore necessarily different. To avoid confusion with the main Gecko, even though this forked Gecko is still mostly official Mozilla code, Classilla's version of Gecko was renamed Clecko.
 
 ==What was WaMCom?==
-WaMCom was Kai Engert's maintained version of Mozilla 1.3.1; the Mac build of WaMCom is the direct ancestor of Classilla. It is no longer supported or developed.
+[http://www.wamcom.org/ WaMCom] was Kai Engert's maintained version of Mozilla 1.3.1; the Mac build of WaMCom is the direct ancestor of Classilla. It is no longer supported or developed.
 
 ==Does Mozilla support Classilla or Clecko?==
 No, and it is highly unlikely they will even support OS 9 at all again given the niche user base. For this reason, *you should not ask Mozilla for support of Classilla/Clecko, nor should you ever file Bugzilla entries.* If there is a specific issue that merits Bugzilla notation, let the Classilla project leads determine that on your behalf.
