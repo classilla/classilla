@@ -10,11 +10,11 @@ This document is always subject to change, but basically covers which version of
 
 This was the first release of Classilla with the updated "Clecko" layout engine. It is roughly the equivalent of Mozilla 1.6, but this is not exact (it lacks some 1.6 features, but also adds features from as late as 1.8). This version had layout and multiple security improvements, along with changes for rebranding and Mac-specific bug fixes.
 
-This version was intentionally unfinished -- since WaMCoM is no more, this is the only version of Mozilla for the classic Mac that even exists in theoretical form, so its release was accelerated to ensure continuity. For that reason, it was released in 'pre-alpha' form on June 30th, 2009.
+This version was intentionally unfinished -- since WaMCom is no longer updated, this is the only version of Mozilla for the classic Mac that is even still theoretically maintained, so its release was accelerated to ensure continuity. For that reason, it was released in 'pre-alpha' form on June 30th, 2009.
 
 ==Classilla 9.0.4==
 
-This will be the second release of Classilla. It will continue to add security and network improvements from Bugzilla, and will have updates to !JavaScript DOM. Layout improvements will be intentionally restricted to showstoppers and significant flaws only, although some large changes will still be landed. Various other MacOS-specific stability and functionality issues will also be targetted for this release.
+This will be the second release of Classilla. It will continue to add security and network improvements from Bugzilla, and will have updates to !JavaScript DOM. Additional significant layout improvements are also present in this release. Various other MacOS-specific stability and functionality issues will also be targetted for this release.
 
 Please note that due to the large lag in Mozilla on OS 9, this version will still have known bugs (just less, and much fewer fatal ones).
 
@@ -31,7 +31,7 @@ As this is a low-level change and may induce new bugs, this is being done on "be
 
 *Milestone 9.0.7*: Beta prior to 9.1. There should be no outstanding security issues by this milestone.
 
-*Milestone 9.0.8*: If needed.
+*Milestone 9.0.8*: Remaining outstanding layout blockers and regressions, if any. Internationalization packs may also be supported starting with this release.
 
 *Milestone 9.0.9*: If needed.
 
@@ -41,11 +41,7 @@ First official release version with updated !JavaScript internals. *_This versio
 
 ==Classilla 9.1.1 through 9.1.9==
 
-These are placeholder versions for a planned update of the layout engine with an eye towards improved Acid2 compliance. Debug building will be specifically fixed by this version to facilitate layout study. These versions will also be "beta" with 9.1 remaining on the old layout system as the stable version.
-
-*Milestone 9.1.1*: Clean up code, remove low-risk history blocks to reduce code size. Fix debug builds.
-
-*Milestone 9.1.2 through 9.1.9*: Under consideration.
+Under consideration. Fixed SVG support is being reviewed as a possible feature.
 
 ==Classilla 9.2==
 
