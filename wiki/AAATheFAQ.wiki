@@ -42,6 +42,12 @@ Certain portions will be supported (and some actually already are invisibly). Th
 
 Currently, however, the highest priority is making sure that HTML 4.01 and CSS 2 are supported to a functional level; this is incomplete, but improving.
 
+==Will Classilla still support Chatzilla?==
+Chatzilla support is deprecated as of 9.0.4, and *removed completely* in versions thereafter due to multiple known security flaws and difficulty integrating later versions with Classilla's older code base. There are many better IRC clients for Mac OS 9; you should use one of those instead.
+
+==Will Classilla still support mail and news?==
+Currently, yes. There are enough users and enough user demand that Classilla will continue to support it for the immediate future. However, we do need testers to find and report bugs, as well as regular user reports. *You can help!*
+
 ==Will Classilla ever be as up-to-date as Firefox?==
 That depends on the devotion and hardwork of the maintainers, leads and programmers. We're always looking for a few good Mac nerds.
 
