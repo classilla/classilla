@@ -1,6 +1,6 @@
 #summary How to set up the Classilla build environment
 
-===Read these directions thoroughly before you even download the source archive! Otherwise you will waste a lot of time and sweat!===
+===This is now obsolete: refer to HowToBuild2 for the current process, which has some small but important changes.===
 
 This is mostly based on http://www-archive.mozilla.org/build/mac_cfm.html with my own notes. I'm trying to remember all the gotchas I encountered initially getting this running; please make comments as you encounter your own glitches.
 
