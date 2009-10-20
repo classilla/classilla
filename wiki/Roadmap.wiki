@@ -14,7 +14,7 @@ This version was intentionally unfinished -- since WaMCom is no longer updated, 
 
 ==Classilla 9.0.4==
 
-This will be the second release of Classilla. It will continue to add security and network improvements from Bugzilla, and will have updates to !JavaScript DOM. Additional significant layout improvements are also present in this release. Various other MacOS-specific stability and functionality issues will also be targetted for this release.
+This will be the second release of Classilla. It has additional security and network improvements from Bugzilla, and updates to !JavaScript and DOM. Additional layout improvements are also present in this release, along with an experimental fixup rendering mode for sites that cannot be rendered with the standard layout engine, and various other MacOS-specific stability and functionality issues have also been repaired.
 
 Please note that due to the large lag in Mozilla on OS 9, this version will still have known bugs (just less, and much fewer fatal ones).
 
