@@ -1,4 +1,4 @@
-#summary How to set up the Classilla build environment
+#summary How to set up the Classilla 9.0 build environment (obsolete)
 
 ===This is now obsolete: refer to HowToBuild2 for the current process, which has some small but important changes.===
 
