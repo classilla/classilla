@@ -1,9 +1,9 @@
 #summary This is Classilla's most important bug. Can *you* fix it?
 
-See issue 65 and look at widget/src/mac/nsWindow.cpp, in particular nsWindow::ScrollBits. Can you fix this bug?
+See issue 65 and look at widget/src/mac/nsWindow.cpp, in particular nsWindow::!ScrollBits. Can you fix this bug?
 
 If you don't understand what's going on and why this is so important, download Mozilla 1.3.1 for OS X and compare its rendering for
 
 http://www.floodgap.com/software/classilla/bleh/scaugh.html
 
-with Classilla's (or even Netscape 7's, or WaZilla, or WaMCom). *Until we fix this, layout cannot advance!*
+with Classilla's (or even Netscape 7's, or !WaZilla, or WaMCom). *Until we fix this, layout cannot advance!*
