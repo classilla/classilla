@@ -1,10 +1,8 @@
-#summary How to set up the Classilla 9.0 build environment (obsolete)
-
-===This is now obsolete: refer to HowToBuild2 for the current process, which has some small but important changes.===
+#summary How to set up the Classilla build environment.
 
 This is mostly based on http://www-archive.mozilla.org/build/mac_cfm.html with my own notes. I'm trying to remember all the gotchas I encountered initially getting this running; please make comments as you encounter your own glitches.
 
-*This document will change in several significant ways for Classilla 9.0.4 and later versions, so you should expect it to be obsolete after that version is released. This only covers building the original Classilla 9.0 source.*
+*Changes have occurred in this document as of 9.0.4.*
 
 ==Prerequisites==
 
@@ -21,8 +19,8 @@ You should not have multiple copies of MPW on your build system; only use the on
 
 To properly install the !CodeWarrior environment,
   * Run the installer(s) and select a stock full Mac C/C++ installation (Mach-O is not required; you can install that and/or Win32 if you want). Make sure that !PowerPlant, the !CodeWarrior Plugin SDK and !CodeWarrior MPW are installed.
-  * Unpack the Classilla source. *This is almost 30,000 files. It is strongly recommended you do this on a separate, HFS+-formatted partition or disk other than your boot volume.*
-  * In `mozilla:build:mac`, find RunTSScript and make sure it is a !CodeWarrior plugin with Get Info (if not, drop it on !StuffIt Expander and rename the resulting !AppleDouble file back to RunTSScript). Put it in `CodeWarrior Plugins:Compilers`. Later versions of the Classilla source should have this already converted for you, but I forgot to do so for 9.0.
+  * Unpack the Classilla source. *This is in the ballpark of 30,000 files. It is strongly recommended you do this on a separate, HFS+-formatted partition or disk other than your boot volume.*
+  * In `mozilla:build:mac`, find RunTSScript and make sure it is a !CodeWarrior plugin with Get Info (if not, drop it on !StuffIt Expander and rename the resulting !AppleDouble file back to RunTSScript). Put it in `CodeWarrior Plugins:Compilers`. Later versions of the Classilla source have this already converted for you; the source for original 9.0 doesn't.
   * Enable the !ToolServer menu (it looks like the Amiga window gadget) in the !CodeWarrior IDE preferences. Make sure it can start !ToolServer. Make sure all the !ToolServer tools show up (in particular !MakeStubs and DumpPEF). If not, chase down all the Tools folders, remove extraneous ones, and alias them to point to a central folder. This is critical for stubs.
   * The following libraries are needed if you don't already have them:
     * Menu Sharing Toolkit. This is a part of [http://macbird.userland.com/download MacBird]. Unpack !MacBird, then copy the MST portion into `MacOS Support:Menu Sharing Toolkit:`
@@ -72,14 +70,16 @@ Old Mozilla hands will wonder where the part that converted the exported XML pro
 To make a Classilla that can run on a different computer, it is not sufficient to merely copy the Classilla executable as the shlbs must come along with it. To make this process easier, Classilla includes `ClassillaGenerateDist.pl` that finds all the dependencies, copies them and groups them into a folder that you can immediately copy away. The only problem is that this can mess up your alias structure if you're not careful. I recommend:
 
    * When preparing to run off a standalone build, run `ClassillaFixAliases.pl` and make sure that all aliases are valid and pointing to valid files. Fix any ambiguities and make sure aliases that were not found are corrected before proceeding.
-   * Run `ClassillaGenerateDist.pl`. In the `mozilla:dist:` folder will be a `Classilla` folder containing a completely standalone set of files. You can drop this folder on Make SMI or !DropStuff to create an archive, or copy it to another system.
+   * Run `ClassillaGenerateDist.pl`. In the `mozilla:dist:` folder will be a `_RTM Package` (formerly `Classilla` -- the `_` is a space) folder containing a completely standalone set of files. You can rename and drop this folder on Make SMI or !DropStuff to create an archive, or copy it to another system. As of 9.0.4, the folder contains the Classilla readme, and Classilla itself in an enclosing folder (the readme comes from the `Classilla Dist Resources` folder; you can put other things in there too you want rolled in).
    * When this is done, *delete the Classilla standalone distribution folder*, empty the Trash and re-run `ClassillaFixAliases.pl` to make sure the aliases are still correct and have not been tainted to mistakenly point into the Classilla standalone directory which you just deleted.
+
+9.0.4 also adds `ClassillaPackageDist.pl` which tries to make a CFM application package that is compatible with OS 9. This package seems to have trouble running on OS X, however, which is why it is still not the default build and should be considered experimental. It also won't work on OS 8.6, but should still open and be executable with the alias inside.
 
 ==Troubleshooting==
 
 *Debug builds don't work.*
 
-Yup, they definitely don't. Don't try to run `BuildMozillaDebug.pl` yet. I intend to get this fixed again for 9.0.5.
+Yup, they definitely don't. Don't try to run `BuildMozillaDebug.pl` yet. I intend to get this fixed again for a future version.
 
 *Carbon builds don't work.*
 
@@ -88,6 +88,10 @@ Yup, they probably don't. I don't have any plans to support Carbon builds, but I
 *The build script can't find !CodeWarrior.*
 
 Trash `CodeWarrior IDE Path.txt` and see if the script can re-detect it.
+
+*I want the build to start over but it keeps starting in the middle.*
+
+There is a build progress file dropped in the root source directory enclosing `mozilla`. Delete that.
 
 *During the manifest stage, I see several spurious errors.*
 
@@ -104,6 +108,8 @@ Make sure RunTSScript got installed correctly, but even if it is, !CodeWarrior s
 Alternatively, this sometimes happens if you have !ToolServer running before the script expects to start it up. Stop the script, stop !ToolServer, and restart the build.
 
 In general, I find that the stubs build most reliably if you start the build script and then _don't touch anything_ until stubs are built.
+
+When you get stubs built properly for the first time, you might want to comment `BuildStubs()` out of the build .pm so that you don't have to build it again; they are unlikely to ever change and just represent the most likely way the build process can go wrong.
 
 *The runtime will not build (compiler or linker errors).*
 
