@@ -18,28 +18,13 @@ This was the second release of Classilla. It has additional security and network
 
 Classilla 9.0.4 was released on October 28th, 2009.
 
-==Classilla 9.0.5 through 9.0.9==
-
-These are placeholder versions for a planned update of the !JavaScript interpreter engine. Further security improvements will also be selected and applied from Bugzilla.
-As this is a low-level change and may induce new bugs, this is being done on "beta" versions for testing, with 9.0.4 remaining on !JavaScript 1.5 as the stable version.
-
-*Milestone 9.0.5*: Remove Chatzilla; update !JavaScript to Mozilla 1.8.1.x (or 1.9.1.x if possible). All security patches for core JS engine should be applied.
-
-*Milestone 9.0.6*: Complete transformation of !NoScript into Script-B-Gone, with new interface (including "one click enable for all scripts on current URL"). Continue security update.
-
-*Milestone 9.0.7*: Beta prior to 9.1. There should be no outstanding security issues by this milestone.
-
-*Milestone 9.0.8*: Remaining outstanding layout blockers and regressions, if any. Internationalization packs may also be supported starting with this release.
-
-*Milestone 9.0.9*: If needed.
-
 ==Classilla 9.1==
 
-First official release version with updated !JavaScript internals. *_This version will achieve the core goal of a fully secure classic Mac OS browser._* Other changes may be landed for this version. There is no ETA at this time.
+This will repair some of the prominent regressions in 9.0.4 as some of these are serious and do not have a workaround. The rest of the feature set is being determined.
 
 ==Classilla 9.1.1 through 9.1.9==
 
-Under consideration. Fixed SVG support is being reviewed as a possible feature.
+Future.
 
 ==Classilla 9.2==
 
