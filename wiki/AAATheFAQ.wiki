@@ -24,7 +24,7 @@ Because Mozilla 1.4 and up include so much OS X specific code that won't work wi
 [http://www.wamcom.org/ WaMCom] was Kai Engert's maintained version of Mozilla 1.3.1; the Mac build of WaMCom is the direct ancestor of Classilla. It is no longer supported or developed.
 
 ==Does Mozilla support Classilla or Clecko?==
-No, and it is highly unlikely they will even support OS 9 at all again given the niche user base. For this reason, *you should not ask Mozilla for support of Classilla/Clecko, nor should you ever file Bugzilla entries.* If there is a specific issue that merits Bugzilla notation, let the Classilla project leads determine that on your behalf.
+No, and it is highly unlikely they will ever support OS 9 at all again given the niche user base. For this reason, *you should not ask Mozilla for support of Classilla/Clecko, nor should you file Bugzilla entries about bugs in Classilla.* If there is a specific issue that merits Bugzilla notation, let the Classilla project leads determine that on your behalf.
 
 ==When will new versions of Classilla come out?==
 See [Roadmap].
@@ -43,7 +43,7 @@ Certain portions will be supported (and some actually already are invisibly). Th
 Currently, however, the highest priority is making sure that HTML 4.01 and CSS 2 are supported to a functional level; this is incomplete, but improving.
 
 ==Will Classilla still support Chatzilla?==
-Chatzilla support is deprecated as of 9.0.4, and *removed completely* in versions thereafter due to multiple known security flaws and difficulty integrating later versions with Classilla's older code base. There are many better IRC clients for Mac OS 9; you should use one of those instead.
+Chatzilla stopped appearing in Classilla after 9.0.4. It no longer appears in versions thereafter due to multiple known security flaws and difficulty integrating later versions with Classilla's older code base. There are many better IRC clients for Mac OS 9; you should use one of those instead. If you must use Chatzilla, you are limited to 9.0 and 9.0.4 (or WaMCom, etc.).
 
 ==Will Classilla still support mail and news?==
 Currently, yes. There are enough users and enough user demand that Classilla will continue to support it for the immediate future. However, we do need testers to find and report bugs, as well as regular user reports. *You can help!*
@@ -59,7 +59,7 @@ Please note that depending on your version of OS X, the Classic environment may 
 To run Classilla on an Intel Macintosh or on 10.5 or later, since neither support Classic, you must use an emulator such as !SheepShaver. Although it is not officially supported, people have used Classilla on !SheepShaver and demonstrated that it runs well. !SheepShaver on BeOS is also compatible. Again, its performance under emulation may be significantly impacted. Classilla does not run under Basilisk II, because that is a 68K Mac emulator (see the next question).
 
 ==Can I run Classilla on a 68K Macintosh?==
-No. Classilla is currently built with a version of !CodeWarrior that only supports PowerPC, and relies on certain specific features of OS 8.5 and later such as Unicode support. It is possible to backport these features to OS 8.1 or possibly earlier, but that task is demonstrably non-trivial, and the memory demands may seriously restrict which machines could run Classilla even if those constraints were otherwise met.
+Not natively. Classilla is currently built with a version of !CodeWarrior that only supports PowerPC, and relies on certain specific features of OS 8.5 and later such as Unicode support. It is possible to backport these features to OS 8.1 or possibly earlier, but that task is demonstrably non-trivial, and the memory demands may seriously restrict which machines could run Classilla even if those constraints were otherwise met.
 
 However, if you have *a 68K Mac with a PowerPC card* such as any of the 601-based PDS cards out there, those Macs _can_ run Classilla as long as you have sufficient memory and can boot 8.6 on them (the Sonnet PPC cards can with their enabler, for example). Please note that their performance will be, at best, pedestrian.
 
