@@ -41,7 +41,7 @@ Yes, but OS 9 support was dropped after Flash 7. *There are known security probl
 This is a known and unfortunately unfixable bug due to the way plugins in general work in Mac OS 9. See issue 14.
 
 ==Does Classilla support Java?==
-Yes, but only the version of Macintosh Runtime for Java that Apple provides with your version of Mac OS. *There are known security problems in MRJ in the classic Mac OS, and its use is strongly discouraged.* By default, Java is forced off in new profiles. You can turn it on from the preferences panel, but you should only use it on trusted sites.
+Yes, but only the version of Macintosh Runtime for Java that Apple provides with your version of Mac OS. *There are known security problems in all classic Mac OS versions of the MRJ and its use is strongly discouraged.* By default, Java is forced off in new profiles. You can turn it on from the preferences panel, but you should only use it on trusted sites.
 
 ==Will Classilla support HTML 5?==
 Certain portions will be supported (and some actually already are invisibly). The most visible features such as CANVAS tags, however, will require extensive work for Clecko's non-Cairo-based graphics architecture, and features such as VIDEO and AUDIO tags may never be supported due to poor codec availability for OS 9. Networking support may also be difficult to integrate with the older Clecko codebase. There are no promises, let alone an ETA, for any of these features. On the other hand, most document-based tags are easy to incorporate into Classilla's parser and many of these are or will be supported.
