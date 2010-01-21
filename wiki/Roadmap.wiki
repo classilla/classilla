@@ -20,11 +20,13 @@ Classilla 9.0.4 was released on October 28th, 2009.
 
 ==Classilla 9.1==
 
-This will repair some of the prominent regressions in 9.0.4 as some of these are serious and do not have a workaround. The rest of the feature set is being determined.
+This version restores the layout overflow branch, allowing more advanced rendering and further improvements with site compatibility. It will also fix the most important regressions caused by 9.0.4 while maintaining the vast majority of its improvements, and add and repair additional useability features.
+
+The current ETR is Q2 2010.
 
 ==Classilla 9.1.1 through 9.1.9==
 
-Future.
+These will likely be placeholder releases for a planned complete rewrite of JavaScript, as well as possibly NSS and libnecko. This will be detailed more when 9.1 is released.
 
 ==Classilla 9.2==
 
