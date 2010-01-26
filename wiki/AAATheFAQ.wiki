@@ -77,7 +77,7 @@ There are two possible reasons:
 javascript:__doPostBack('something', 'something else')
 }}}
  
-==Will Classilla's JavaScript be updated?==
+==Will Classilla's !JavaScript be updated?==
 Classilla 9.0.4 and 9.1 both partially improve the performance and operation of !JavaScript, and a full rewrite is planned for a future release. Even so, *please only enable !JavaScript when absolutely necessary for a site to function.* It is much faster, safer and more stable to let !NoScript control !JavaScript for you rather than keeping it enabled all the time.
 
 ==Classilla disables Sherlock 2 on my non-English Mac.==
