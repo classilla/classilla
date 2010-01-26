@@ -61,7 +61,7 @@ Certain portions will be supported (and some actually already are invisibly). Th
 Currently, however, the highest priority is making sure that HTML 4.01 and CSS 2 are supported to a functional level; this is incomplete, but improving.
 
 ==!JavaScript doesn't work in Classilla.==
-Classilla uses its own special version of !NoScript due to gaps in its JavaScript interpreter that can cause instability, security problems or crashing.
+Classilla uses its own special version of !NoScript due to gaps in its !JavaScript interpreter that can cause instability, security problems or crashing.
 
 By default, *!NoScript is configured to block all !JavaScript* except on certain pages where it must be enabled. !NoScript appears in your Classilla window as a little "S" at the lower right which you can click to change its settings: either add the current website name to the white list, or, if you are adventurous or reckless, allow it on all pages. For more information, see the [http://www.classilla.org/releases/ Release Notes].
 
@@ -78,7 +78,7 @@ javascript:__doPostBack('something', 'something else')
 }}}
  
 ==Will Classilla's JavaScript be updated?==
-Yes, this is planned for a future release. Even so, *please only enable !JavaScript when absolutely necessary for a site to function.* It is much faster, safer and more stable to let !NoScript control !JavaScript for you rather than keeping it enabled all the time.
+Classilla 9.0.4 and 9.1 both partially improve the performance and operation of !JavaScript, and a full rewrite is planned for a future release. Even so, *please only enable !JavaScript when absolutely necessary for a site to function.* It is much faster, safer and more stable to let !NoScript control !JavaScript for you rather than keeping it enabled all the time.
 
 ==Classilla disables Sherlock 2 on my non-English Mac.==
 If you are using a non-English keyboard and running Sherlock 2 and Classilla at the same time, your keyboard will not work in Sherlock 2 (it will work fine elsewhere). This can be solved by temporarily switching to an English keyboard layout. It is currently being debated whether this is a Mozilla or Mac OS/Sherlock bug.
