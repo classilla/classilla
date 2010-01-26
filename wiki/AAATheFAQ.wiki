@@ -34,6 +34,18 @@ Strictly speaking [http://bugzilla.mozilla.org/ Bugzilla] refers to either the B
 
 Again, you should *not* file Bugzilla issues for Classilla.
 
+==Can I run Classilla on OS X?==
+Yes. In fact, Classilla may be the best browser option for you if you are running a very old version of OS X such as 10.0 or 10.1, but you must run it in Classic as it is not Carbonized. If you are using 10.2, however, you should probably consider Firefox 2 as its compatibility is currently better than Classilla, and if you are using 10.3 Camino 1.6.x is a far better choice and currently supported. 10.4 is currently supported by all major browsers.
+
+Please note that depending on your version of OS X, the Classic environment may (in some cases noticibly) degrade Classilla's performance. Classilla is naturally always fastest in a native, non-emulated environment.
+
+To run Classilla on an Intel Macintosh or on 10.5 or later, since neither support Classic, you must use an emulator such as !SheepShaver. Although it is not officially supported, people have used Classilla on !SheepShaver and demonstrated that it runs well. !SheepShaver on BeOS is also compatible. Again, its performance under emulation may be significantly impacted. Classilla does not run under Basilisk II, because that is a 68K Mac emulator (see the next question).
+
+==Can I run Classilla on a 68K Macintosh?==
+Not natively. Classilla is currently built with a version of !CodeWarrior that only supports PowerPC, and relies on certain specific features of OS 8.5 and later such as Unicode support. It is possible to backport these features to OS 8.1 or possibly earlier, but that task is demonstrably non-trivial, and the memory demands may seriously restrict which machines could run Classilla even if those constraints were otherwise met.
+
+However, if you have *a 68K Mac with a PowerPC card* such as any of the 601-based PDS cards out there, those Macs _can_ run Classilla as long as you have sufficient memory and can boot 8.6 on them (the Sonnet PPC cards can with their enabler, for example). Please note that their performance will be, at best, pedestrian.
+
 ==Does Classilla support Flash?==
 Yes, but OS 9 support was dropped after Flash 7. *There are known security problems in that version of Adobe Flash Player and its use is strongly discouraged.* Still, this is enough to surf many sites and even view many videos, although people have reported synchronization issues with certain codecs. Your humble author, however, does not use it.
 
@@ -48,6 +60,29 @@ Certain portions will be supported (and some actually already are invisibly). Th
 
 Currently, however, the highest priority is making sure that HTML 4.01 and CSS 2 are supported to a functional level; this is incomplete, but improving.
 
+==!JavaScript doesn't work in Classilla.==
+Classilla uses its own special version of !NoScript due to gaps in its JavaScript interpreter that can cause instability, security problems or crashing.
+
+By default, *!NoScript is configured to block all !JavaScript* except on certain pages where it must be enabled. !NoScript appears in your Classilla window as a little "S" at the lower right which you can click to change its settings: either add the current website name to the white list, or, if you are adventurous or reckless, allow it on all pages. For more information, see the [http://www.classilla.org/releases/ Release Notes].
+
+The version of !JavaScript in Classilla is old and while it works on many sites, it does not work on all of them.
+
+==When !JavaScript is on, clicking on certain links doesn't work.==
+There are two possible reasons:
+
+  * The links themselves are in !JavaScript that Classilla can't understand. You must disable !JavaScript to navigate that particular site. The New York Times is an infamous example.
+
+  * Sites using Microsoft ASP do not recognize Classilla as a Mozilla-based browser, and fail to insert the correct !JavaScript code for their links. To fix that, go to (in 9.0.4 and up) Preferences and change the User-Agent to Firefox, then reload the page and the links should start to function. Remember to change the User-Agent back when you're done. You can recognize these links because they look something like this:
+{{{
+javascript:__doPostBack('something', 'something else')
+}}}
+ 
+==Will Classilla's JavaScript be updated?==
+Yes, this is planned for a future release. Even so, *please only enable !JavaScript when absolutely necessary for a site to function.* It is much faster, safer and more stable to let !NoScript control !JavaScript for you rather than keeping it enabled all the time.
+
+==Classilla disables Sherlock 2 on my non-English Mac.==
+If you are using a non-English keyboard and running Sherlock 2 and Classilla at the same time, your keyboard will not work in Sherlock 2 (it will work fine elsewhere). This can be solved by temporarily switching to an English keyboard layout. It is currently being debated whether this is a Mozilla or Mac OS/Sherlock bug.
+
 ==Will Classilla still support Chatzilla?==
 Chatzilla's final release under Classilla was with 9.0.4. It no longer appears in versions thereafter due to multiple known security flaws and difficulty integrating later versions with Classilla's older code base. There are many better IRC clients for Mac OS 9; you should use one of those instead. If you must use Chatzilla, you are limited to 9.0 and 9.0.4 (or WaMCom, etc.).
 
@@ -56,21 +91,6 @@ Currently, yes. There are enough users and enough user demand that Classilla wil
 
 ==Will Classilla ever be as up-to-date as Firefox?==
 That depends on the devotion and hardwork of the maintainers, leads and programmers. We're always looking for a few good Mac nerds.
-
-==Can I run Classilla on OS X?==
-Yes. In fact, Classilla may be the best browser option for you if you are running a very old version of OS X such as 10.0 or 10.1, but you must run it in Classic as it is not Carbonized. If you are using 10.2, however, you should probably consider Firefox 2 as its compatibility is currently better than Classilla, and if you are using 10.3 Camino 1.6.x is a far better choice and currently supported. 10.4 is currently supported by all major browsers.
-
-Please note that depending on your version of OS X, the Classic environment may (in some cases noticibly) degrade Classilla's performance. Classilla is naturally always fastest in a native, non-emulated environment.
-
-To run Classilla on an Intel Macintosh or on 10.5 or later, since neither support Classic, you must use an emulator such as !SheepShaver. Although it is not officially supported, people have used Classilla on !SheepShaver and demonstrated that it runs well. !SheepShaver on BeOS is also compatible. Again, its performance under emulation may be significantly impacted. Classilla does not run under Basilisk II, because that is a 68K Mac emulator (see the next question).
-
-==Can I run Classilla on a 68K Macintosh?==
-Not natively. Classilla is currently built with a version of !CodeWarrior that only supports PowerPC, and relies on certain specific features of OS 8.5 and later such as Unicode support. It is possible to backport these features to OS 8.1 or possibly earlier, but that task is demonstrably non-trivial, and the memory demands may seriously restrict which machines could run Classilla even if those constraints were otherwise met.
-
-However, if you have *a 68K Mac with a PowerPC card* such as any of the 601-based PDS cards out there, those Macs _can_ run Classilla as long as you have sufficient memory and can boot 8.6 on them (the Sonnet PPC cards can with their enabler, for example). Please note that their performance will be, at best, pedestrian.
-
-==Why does !StuffIt Expander think Classilla's disk image is encrypted?==
-This is a bug in !StuffIt Expander. Use the .sit encoded version, not the .bin (!BinHex) encoded one. Eventually these downloads will be removed.
 
 ==How can I help with Classilla? I only know HTML.==
 You can still be a big help as a distiller. See [BeAPart].
