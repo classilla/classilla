@@ -53,6 +53,8 @@ Here are the user-contributed translations so far (send new ones to classilla at
 
   * Japanese: http://page.freett.com/macos9/classilla_ja_20100130.html
 
+If you'd like to try creating your own, see [http://www-archive.mozilla.org/projects/l10n/mlp_howto.html How to localize Mozilla] (which will also work for the older code in Classilla).
+
 ==Does Classilla support Flash?==
 Yes, but OS 9 support was dropped after Flash 7. *There are known security problems in that version of Adobe Flash Player and its use is strongly discouraged.* Still, this is enough to surf many sites and even view many videos, although people have reported synchronization issues with certain codecs. Your humble author, however, does not use it.
 
