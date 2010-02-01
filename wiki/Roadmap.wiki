@@ -26,7 +26,7 @@ Classilla 9.1 is planned for release on March 15th, 2010.
 
 ==Classilla 9.1.1 through 9.1.9==
 
-These will likely be placeholder releases for a planned complete rewrite of !JavaScript, as well as possibly NSS and libnecko. This will be detailed more when 9.1 is released.
+These will likely be placeholder releases for a planned complete rewrite of !JavaScript, as well as possibly NSS and libnecko. This will be detailed more when 9.1 is released. Official localization will also commence with these releases.
 
 ==Classilla 9.2==
 
