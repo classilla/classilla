@@ -51,7 +51,7 @@ Not yet, but this is planned. *However, there are already unofficial builds that
 
 Here are the user-contributed translations so far (send new ones to classilla at floodgap dawt com):
 
-  * Japanese: http://page.freett.com/macos9/classilla_ja_20100130.html (instructions: http://page.freett.com/macos9/classilla_ja_alpha.html)
+  * Japanese (日本語): http://page.freett.com/macos9/classilla/
 
 If you'd like to try creating your own, see [http://www-archive.mozilla.org/projects/l10n/mlp_howto.html How to localize Mozilla] (which will also work for the older code in Classilla).
 
