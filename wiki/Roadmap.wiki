@@ -14,13 +14,13 @@ This version was intentionally unfinished -- since WaMCom is no longer updated, 
 
 ==Classilla 9.0.4==
 
-This was the second release of Classilla. It has additional security and network improvements from Bugzilla, and updates to !JavaScript and DOM. Additional layout improvements are also present in this release, along with an experimental fixup rendering mode for sites that cannot be rendered with the standard layout engine, and various other MacOS-specific stability and functionality issues have also been repaired. This improves Classilla's current bug list, although more work remains planned for future versions.
+This was the second release of Classilla. It added additional security and network improvements from Bugzilla, and updates to !JavaScript and DOM. Additional layout improvements were also present in this release, along with an experimental fixup rendering mode for sites that cannot be rendered with the standard layout engine, and various other MacOS-specific stability and functionality issues were also repaired. This was the final version to support Chatzilla.
 
 Classilla 9.0.4 was released on October 28th, 2009.
 
 ==Classilla 9.1==
 
-This version restores the layout overflow branch, allowing more advanced rendering and further improvements with site compatibility, roughly somewhere between Mozilla 1.7 and 1.8. It will also fix the most important regressions caused by 9.0.4 while maintaining the vast majority of its improvements, improve stability, and add and repair additional useability features.
+This is the third release of Classilla. This version restores the layout overflow branch (replacing the 9.0.4 experimental renderer), allowing more advanced rendering and further improvements with site compatibility, roughly somewhere between Mozilla 1.7 and 1.8. It will also fix the most important regressions caused by 9.0.4 while maintaining the vast majority of its improvements, improve stability, and add and repair additional useability features.
 
 Classilla 9.1 is planned for release on March 15th, 2010.
 
