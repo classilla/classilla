@@ -102,8 +102,8 @@ Classilla 9.0.4 and 9.1 both partially improve the performance and operation of 
 ==Classilla disables Sherlock 2 on my non-English Mac.==
 If you are using a non-English keyboard and running Sherlock 2 and Classilla at the same time, your keyboard will not work in Sherlock 2 (it will work fine elsewhere). This can be solved by temporarily switching to an English keyboard layout. It is currently being debated whether this is a Mozilla or Mac OS/Sherlock bug.
 
-==Will Classilla still support Chatzilla?==
-Chatzilla's final release under Classilla was with 9.0.4. It no longer appears in versions thereafter due to multiple known security flaws and difficulty integrating later versions with Classilla's older code base. There are many better IRC clients for Mac OS 9; you should use one of those instead. If you must use Chatzilla, you are limited to 9.0 and 9.0.4 (or WaMCom, etc.).
+==Why doesn't Classilla support Chatzilla?==
+Chatzilla's final release under Classilla was with 9.0.4. It no longer appears in 9.1 and versions thereafter due to multiple known security flaws and difficulty integrating later versions with Classilla's older code base. There are many better IRC clients for Mac OS 9; you should use one of those instead. If you must use Chatzilla, you are limited to 9.0 and 9.0.4 (or WaMCom, etc.).
 
 ==Will Classilla still support mail and news?==
 Currently, yes. There are enough users and enough user demand that Classilla will continue to support it for the immediate future. However, we do need testers to find and report bugs, as well as regular user reports. *You can help!*
