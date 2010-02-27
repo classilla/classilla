@@ -63,6 +63,8 @@ Yes, but OS 9 support was dropped after Flash 7. *There are known security probl
 ==Flash (and other plugins) make Classilla flicker really badly sometimes.==
 This is a known and unfortunately unfixable bug due to the way plugins in general work in Mac OS 9. See issue 14.
 
+If this really bugs you, you can disable plugins completely by going to Preferences > Advanced > Performance and checking Disable plugins.
+
 ==Does Classilla support Java?==
 Yes, but only the version of Macintosh Runtime for Java that Apple provides with your version of Mac OS. *There are known security problems in all classic Mac OS versions of the MRJ and its use is strongly discouraged.* By default, Java is forced off in new profiles. You can turn it on from the preferences panel, but you should only use it on trusted sites.
 
