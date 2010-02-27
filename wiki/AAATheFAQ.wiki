@@ -76,6 +76,9 @@ Currently, however, the highest priority is making sure that HTML 4.01 and CSS 2
 ==Some pages render really slowly.==
 There are several layout glitches that can cause Classilla to slow down dramatically on sites with complex or pathologic layouts. You can abort layout by holding Cmd-Period down until you get control back. Note that when you do this, everything in layout stops, so the page might not appear correctly. However, this is completely safe to do, unlike doing a Force Quit, so try to abort layout first if Classilla seems to have stopped responding for awhile.
 
+==Some pages look awful when they scroll.==
+A few pages are not compatible with the way Classilla currently scrolls the screen. You can use a slower but more compatible way of scrolling by going to View > Use Slow Scroll, or pressing Cmd-Shift-S. This setting is sticky and stays until you turn it off.
+
 ==!JavaScript doesn't work in Classilla.==
 Classilla uses its own special version of !NoScript due to gaps in its !JavaScript interpreter that can cause instability, security problems or crashing.
 
