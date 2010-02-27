@@ -20,9 +20,9 @@ Classilla 9.0.4 was released on October 28th, 2009.
 
 ==Classilla 9.1==
 
-This is the third release of Classilla. This version restores the layout overflow branch (replacing the 9.0.4 experimental renderer), allowing more advanced rendering and further improvements with site compatibility, roughly somewhere between Mozilla 1.7 and 1.8. It will also fix the most important regressions caused by 9.0.4 while maintaining the vast majority of its improvements, improve stability, and add and repair additional useability features.
+This is the third release of Classilla. This version restored the layout overflow branch (replacing the 9.0.4 experimental renderer), allowing more advanced rendering and further improvements with site compatibility, roughly somewhere between Mozilla 1.7 and 1.8, though again this is not exact (it lacks some core features of 1.7, but adds code from as late as 1.9). It also repaired the most important regressions caused by 9.0.4.
 
-Classilla 9.1 is planned for release on March 15th, 2010.
+Classilla 9.1 was released on February 26th, 2010.
 
 ==Classilla 9.1.1 through 9.1.9==
 
