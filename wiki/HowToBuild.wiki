@@ -9,7 +9,7 @@ This is mostly based on http://www-archive.mozilla.org/build/mac_cfm.html with m
 ===Hardware/OS===
 The build environment is currently only supported on OS 9.0.4 and higher (9.1 or 9.2 recommended). It will probably build on OS 8.6 but this is considered serendipitous. I haven't tested trying to build on OS X and it would probably require some radical changes anyway.
 
-You should have ample RAM and CPU: a G4 and at least 256MB is recommended. Currently the binary builds are made on a dual 1.25GHz G4, the most powerful Power Mac that can boot OS 9 directly, with 2GB of RAM (1.5GB available to OS 9). A simple relinking takes about 15 minutes; a complete build from utter scratch needs around 90 minutes. Do the math for your own box.
+You should have ample RAM and CPU: a G4 and at least 256MB is recommended. Currently the binary builds are made on an FW400 MDD Power Mac with dual Sonnet 1.8GHz G4 7447A processors, the most powerful Power Mac that can boot OS 9 directly, with 2GB of RAM (1.5GB available to OS 9). A simple relinking takes about 15 minutes; a complete build from utter scratch needs around 80 minutes. Do the math for your own box.
 
 ===Software===
 
@@ -127,7 +127,7 @@ Usually means (a) bad alias(es). Run `ClassillaFixAliases.pl` and make sure ever
 
 It's probably not frozen actually. For things like the layout shared library, the optimization step may take as long as several minutes on slower or more memory-impaired systems. During this process your computer may appear to lock up. Just be patient.
 
-Btw, this is *not improved by giving !CodeWarrior more RAM in Get Info.* In fact, you may make this *worse* by taking away temporary memory from the system, which is what !CodeWarrior grabs during the compile process. However, you may get more oomph out of this by putting in more _physical_ RAM and turning off Virtual Memory.
+_Btw, this is *not* improved by giving !CodeWarrior more RAM in Get Info._ In fact, you may make this *worse* by taking away temporary memory from the system, which is what !CodeWarrior grabs during the compile process. However, you may get more oomph out of this by putting in more _physical_ RAM and turning off Virtual Memory.
 
 *There sure are a lot of warnings.*
 
