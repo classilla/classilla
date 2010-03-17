@@ -57,6 +57,9 @@ Here are the user-contributed translations so far (send new ones to classilla at
 
 If you'd like to try creating your own, see [http://www-archive.mozilla.org/projects/l10n/mlp_howto.html How to localize Mozilla] (which will also work for the older code in Classilla).
 
+==Does Classilla support plugins?==
+Classilla runs most NPAPI plugins, but most OS 9 compatible plugins are no longer updated and some many have security issues (see the question on Flash below). That said, they may still be useful if you require their capabilities, *but using these old versions is at your own risk.* George Serban maintains a list of Classilla-compatible plugins at http://cherwally.webs.com/Classilla/Plugins.html
+
 ==Does Classilla support Flash?==
 Yes, but OS 9 support was dropped after Flash 7. *There are known security problems in that version of Adobe Flash Player and its use is strongly discouraged.* Still, this is enough to surf many sites and even view many videos, although people have reported synchronization issues with certain codecs. Your humble author, however, does not use it.
 
