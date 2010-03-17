@@ -37,7 +37,7 @@ Strictly speaking [http://bugzilla.mozilla.org/ Bugzilla] refers to either the B
 Again, you should *not* file Bugzilla issues for Classilla.
 
 ==Can I run Classilla on OS X?==
-Yes. In fact, Classilla may be the best browser option for you if you are running a very old version of OS X such as 10.0 or 10.1, but you must run it in Classic as it is not Carbonized. If you are using 10.2, however, you should probably consider Firefox 2 as its compatibility is currently better than Classilla, and if you are using 10.3 Camino 1.6.x is a far better choice and currently supported. 10.4 is currently supported by all major browsers.
+Yes. In fact, Classilla may be the best browser option for you if you are running a very old version of OS X such as 10.0 or 10.1, but you must run it in Classic as it is not Carbonized. If you are using 10.2, however, you should probably consider !SeaMonkey 1.1.x as its compatibility is currently better than Classilla, and is still supported, and if you are using 10.3 you could also consider Camino 1.6.11 (though it is EOL). 10.4 is still currently supported by most major browsers.
 
 Please note that depending on your version of OS X, the Classic environment may (in some cases noticibly) degrade Classilla's performance. Classilla is naturally always fastest in a native, non-emulated environment.
 
