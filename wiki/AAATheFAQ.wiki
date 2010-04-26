@@ -48,6 +48,8 @@ Not natively. Classilla is currently built with a version of !CodeWarrior that o
 
 However, if you have *a 68K Mac with a PowerPC card* such as any of the 601-based PDS cards out there, those Macs _can_ run Classilla as long as you have sufficient memory and can boot 8.6 on them (the Sonnet PPC cards can with their enabler, for example). Please note that their performance will be, at best, pedestrian.
 
+*If you are using such a setup, please see issue 117 ASAP.*
+
 ==Is Classilla localized or available in other languages?==
 Not yet, but this is planned. *However, there are already unofficial builds that some users have created themselves; while these are technically unsupported, they should work just fine.* Eventually there will be official builds incorporating these user translations once all the localizable strings have stabilized.
 
