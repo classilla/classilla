@@ -26,13 +26,13 @@ Classilla 9.1 was released on February 26th, 2010.
 
 ==Classilla 9.2==
 
-This will be the fourth release of Classilla. This version will completely rewrite !JavaScript, replacing it with as recent a version from Mozilla sources as possible. In addition, there will be more updates to DOM and any layout changes necessary to facilitate or stabilize the improvements to !JavaScript. The most important regressions caused by 9.1 will also be repaired, and theming will be restored for this release. Updates to NSS and libnecko will also be considered for this release.
+This will be the fourth release of Classilla. This version will completely rewrite !JavaScript, replacing it with as recent a version from Mozilla sources as possible. In addition, there will be more updates to DOM and any layout changes necessary to facilitate or stabilize the improvements to !JavaScript. The most important regressions caused by 9.1 will also be repaired, and theming will be restored for this release. 
 
 Classilla 9.2 has an expected release date of Q3 2010.
 
 ==Classilla 9.2.1==
 
-This will be the fifth release of Classilla. This version will repair regressions caused by 9.2, and will also introduce Script-B-Gone, a Classilla-specific front-end to !NoScript. Updates to NSS and libnecko will also be considered for this release, along with relevant security content, and strings will be stabilized with 9.2.1 to allow language packs to be officially supported in 9.2.2.
+This will be the fifth release of Classilla. This version will repair regressions caused by 9.2, and will also introduce Script-B-Gone, a Classilla-specific front-end to !NoScript. There will also be evaluation of relevant security content, and strings will be stabilized with 9.2.1 to allow language packs to be officially supported in 9.2.2.
 
 There is currently no ETA for 9.2.1.
 
