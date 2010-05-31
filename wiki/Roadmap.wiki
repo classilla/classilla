@@ -28,7 +28,7 @@ Classilla 9.1 was released on February 26th, 2010.
 
 This will be the fourth release of Classilla. This version will completely rewrite !JavaScript, replacing it with as recent a version from Mozilla sources as possible. In addition, there will be more updates to DOM and any layout changes necessary to facilitate or stabilize the improvements to !JavaScript. The most important regressions caused by 9.1 will also be repaired, and theming will be restored for this release. 
 
-Classilla 9.2 has an expected release date of Q3 2010.
+Classilla 9.2 has an expected release date of July 15th, 2010.
 
 ==Classilla 9.2.1==
 
