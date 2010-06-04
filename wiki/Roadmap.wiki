@@ -26,9 +26,9 @@ Classilla 9.1 was released on February 26th, 2010.
 
 ==Classilla 9.2==
 
-This will be the fourth release of Classilla. This version will completely rewrite !JavaScript, replacing it with the same interpreter used by Firefox 3.0. In addition, there will be more updates to DOM and any layout changes necessary to facilitate or stabilize the improvements to !JavaScript. Although many sites will still not work completely correctly due to missing DOM elements, many more sites will now start to function at some level. The most important regressions caused by 9.1 will also be repaired, and theming will be restored for this release. 
+This is the fourth release of Classilla. This version completely rewrites !JavaScript, replacing it with the same interpreter used by Firefox 3.0.19, with additional targeted improvements to DOM and layout pending a complete update in 9.3. Although many sites will still not work completely correctly due to missing DOM elements, many more sites are better supported at some level. The most important regressions caused by 9.1 were also mitigated or repaired, and theming is specifically supported as of this release. 
 
-Classilla 9.2 has an expected release date of July 15th, 2010.
+Classilla 9.2 was released on June 4th, 2010.
 
 ==Classilla 9.2.1==
 
@@ -44,6 +44,6 @@ There is currently no ETA for 9.2.2, although it is expected to be shortly after
 
 ==Classilla 9.3==
 
-This will be the seventh release of Classilla and the first version with a "unique" version number, since the OS 9 version numbering motif will have been exhausted. Starting with 9.3, Classilla will be numbered according to a conventional major-minor-patch scheme. This release will specifically focus on upgrades to layout, although the scope of this update is yet to be determined. More information will be available after the release of 9.2.x.
+This will be the seventh release of Classilla and the first version with a "unique" version number, since the OS 9 version numbering motif will have been exhausted. Starting with 9.3, Classilla will be numbered according to a conventional major-minor-patch scheme. This release will specifically focus on upgrades to layout and will be a comprehensive update to both layout and DOM based on later Mozilla sources, hand-translated to Classilla's code base.
 
 There is currently no ETA for 9.3.
