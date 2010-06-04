@@ -85,27 +85,27 @@ Currently, however, the highest priority is making sure that HTML 4.01 and CSS 2
 There are several layout glitches that can cause Classilla to slow down dramatically on sites with complex or pathologic layouts. You can abort layout by holding Cmd-Period down until you get control back. Note that when you do this, everything in layout stops, so the page might not appear correctly. However, this is completely safe to do, unlike doing a Force Quit, so try to abort layout first if Classilla seems to have stopped responding for awhile.
 
 ==Some pages look awful when they scroll.==
-A few pages are not compatible with the way Classilla currently scrolls the screen. You can use a slower but more compatible way of scrolling by going to View > Use Slow Scroll, or pressing Cmd-Shift-S. This setting is sticky and stays until you turn it off.
+A few pages are not compatible with the way Classilla currently scrolls the screen. *You can use an alternative (though possibly slower) method of scrolling by holding down the Command key as you scroll.* If you are on a site where you have to do this frequently, you can toggle the default setting by going to View > Use Slow Scroll, or pressing Cmd-Shift-S. This setting is sticky and stays until you turn it off.
 
 ==!JavaScript doesn't work in Classilla.==
-Classilla uses its own special version of !NoScript due to gaps in its !JavaScript interpreter that can cause instability, security problems or crashing.
+Classilla uses its own special version of !NoScript to help reduce possible security and stability problems.
 
 By default, *!NoScript is configured to block all !JavaScript* except on certain pages where it must be enabled. !NoScript appears in your Classilla window as a little "S" at the lower right which you can click to change its settings: either add the current website name to the white list, or, if you are adventurous or reckless, allow it on all pages. For more information, see the [http://www.classilla.org/releases/ Release Notes].
-
-The version of !JavaScript in Classilla is old and while it works on many sites, it does not work on all of them.
 
 ==When !JavaScript is on, clicking on certain links doesn't work.==
 There are two possible reasons:
 
-  * The links themselves are in !JavaScript that Classilla can't understand. You must disable !JavaScript to navigate that particular site. The New York Times is an infamous example.
+  * The links themselves are in !JavaScript that Classilla can't understand. You must disable !JavaScript to navigate that particular site. There should be very few of these sites now with the updated interpreter. If you find one, please send it to Report-A-Bug.
 
   * Sites using Microsoft ASP do not recognize Classilla as a Mozilla-based browser, and fail to insert the correct !JavaScript code for their links. To fix that, go to (in 9.0.4 and up) Preferences and change the User-Agent to Firefox, then reload the page and the links should start to function. Remember to change the User-Agent back when you're done. You can recognize these links because they look something like this:
 {{{
 javascript:__doPostBack('something', 'something else')
 }}}
  
-==Will Classilla's !JavaScript be updated?==
-Classilla 9.0.4 and 9.1 both partially improve the performance and operation of !JavaScript, and a full rewrite is planned for a future release. Even so, *please only enable !JavaScript when absolutely necessary for a site to function.* It is much faster, safer and more stable to let !NoScript control !JavaScript for you rather than keeping it enabled all the time.
+==Will Classilla's !JavaScript and DOM support be updated?==
+Starting with Classilla 9.2, Classilla now uses a minimally modified version of !SpiderMonkey, the exact same !JavaScript interpreter Mozilla uses in Firefox 3.0.19. This interpreter is much faster and more stable than the one in previous versions of Classilla or WaMCom, and repairs many inadequacies. Plans to convert !TraceMonkey, an accelerated version with just-in-time compilation, are also being considered.
+
+That said, the Document Object Model (the piece that connects !JavaScript to the web page) is still fairly out-of-date and many sites relying on very current features still won't work completely. Because document layout and the DOM are closely linked, they must be updated together, which is a large task. Nevertheless, a comprehensive revision of layout and DOM is scheduled for Classilla 9.3.
 
 ==Classilla disables Sherlock 2 on my non-English Mac.==
 If you are using a non-English keyboard and running Sherlock 2 and Classilla at the same time, your keyboard will not work in Sherlock 2 (it will work fine elsewhere). This can be solved by temporarily switching to an English keyboard layout. It is currently being debated whether this is a Mozilla or Mac OS/Sherlock bug.
