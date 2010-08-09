@@ -123,10 +123,10 @@ If you are using a non-English keyboard and running Sherlock 2 and Classilla at 
 Chatzilla's final release under Classilla was with 9.0.4. It no longer appears in 9.1 and versions thereafter due to multiple known security flaws and difficulty integrating later versions with Classilla's older code base. There are many better IRC clients for Mac OS 9; you should use one of those instead. If you must use Chatzilla, you are limited to 9.0 and 9.0.4 (or WaMCom, etc.).
 
 ==How do I get Classilla set up to use Gmail's POP server?==
-The standard settings that Google recommends will work, but here they are for reference:
+The [http://mail.google.com/support/bin/answer.py?answer=13287 standard settings that Google recommends] will work, but here they are for reference:
 
-* Use `pop.gmail.com` port 995 for incoming POP. Enable SSL. Use your account name for your user name (the part before the @).
-* Use `smtp.gmail.com` port 587 for outgoing SMTP. Use STARTTLS.
+  * Use `pop.gmail.com` port 995 for incoming POP. Enable SSL. Use your account name for your user name (the part before the @).
+  * Use `smtp.gmail.com` port 587 for outgoing SMTP. Use STARTTLS.
 
 Whenever Classilla prompts, enter your Gmail password.
 
