@@ -123,12 +123,15 @@ If you are using a non-English keyboard and running Sherlock 2 and Classilla at 
 Chatzilla's final release under Classilla was with 9.0.4. It no longer appears in 9.1 and versions thereafter due to multiple known security flaws and difficulty integrating later versions with Classilla's older code base. There are many better IRC clients for Mac OS 9; you should use one of those instead. If you must use Chatzilla, you are limited to 9.0 and 9.0.4 (or WaMCom, etc.).
 
 ==How do I get Classilla set up to use Gmail's POP server?==
-The [http://mail.google.com/support/bin/answer.py?answer=13287 standard settings that Google recommends] will work, but here they are for reference:
+The short answer is you don't: use IMAP. The long answer is POP on Gmail for some reason causes Classilla to hang up when you quit. POP works fine on other servers, so it is not clear why.
 
-  * Use `pop.gmail.com` port 995 for incoming POP. Enable SSL. Use your account name for your user name (the part before the @).
+==How do I get Classilla set up to use Gmail's IMAP server then?==
+The [http://mail.google.com/support/bin/answer.py?answer=78799 standard settings that Google recommends] will work, but here they are for reference:
+
+  * Use `imap.gmail.com` port 993 for incoming IMAP. Enable SSL. Use your account name for your user name (the part before the @).
   * Use `smtp.gmail.com` port 587 for outgoing SMTP. Use STARTTLS.
 
-Whenever Classilla prompts, enter your Gmail password.
+Whenever Classilla prompts for your password, enter your Gmail password. Remember, you must enable IMAP in your Gmail settings before you can access it with IMAP.
 
 ==Will Classilla still support mail and news?==
 Currently, yes. There are enough users and enough user demand that Classilla will continue to support it for the immediate future. However, we do need testers to find and report bugs, as well as regular user reports. *You can help!*
