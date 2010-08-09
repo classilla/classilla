@@ -40,7 +40,9 @@ Strictly speaking [http://bugzilla.mozilla.org/ Bugzilla] refers to either the B
 Again, you should *not* file Bugzilla issues for Classilla.
 
 ==Can I run Classilla on OS X?==
-Yes. In fact, Classilla may be the best browser option for you if you are running a very old version of OS X such as 10.0 or 10.1, but you must run it in Classic as it is not Carbonized. If you are using 10.2, however, you should probably consider !SeaMonkey 1.1.x as its compatibility is currently better than Classilla, and is still supported, and if you are using 10.3 you could also consider Camino 1.6.11 (though it is EOL). 10.4 is still currently supported by most major browsers.
+Yes. In fact, Classilla may be the best browser option for you if you are running a very old version of OS X such as 10.0 or 10.1, but you must run it in Classic as it is not Carbonized. Reports from 10.2 users also indicate that it performs better than !SeaMonkey 1.1.x in some circumstances, so a combination may be your best best for Jaguar.
+
+If you are looking for a general OS X browser for PPC, however, there are better choices in later versions. For 10.3, Camino 1.6.11 (though EOL) still performs relatively well, and 10.4 is still currently supported by most browsers, including Firefox 3.6.x, Camino 2.0.x and 2.1.x, and !SeaMonkey 2.0.x (plus Safari 4.1.1, !OmniWeb 5.x, !iCab 4, etc.). Nevertheless, each version of Classilla is tested on 10.4 Classic before release.
 
 Please note that depending on your version of OS X, the Classic environment may (in some cases noticibly) degrade Classilla's performance. Classilla is naturally always fastest in a native, non-emulated environment.
 
@@ -123,7 +125,7 @@ If you are using a non-English keyboard and running Sherlock 2 and Classilla at 
 Chatzilla's final release under Classilla was with 9.0.4. It no longer appears in 9.1 and versions thereafter due to multiple known security flaws and difficulty integrating later versions with Classilla's older code base. There are many better IRC clients for Mac OS 9; you should use one of those instead. If you must use Chatzilla, you are limited to 9.0 and 9.0.4 (or WaMCom, etc.).
 
 ==How do I get Classilla set up to use Gmail's POP server?==
-The short answer is you don't: use IMAP. The long answer is POP on Gmail for some reason causes Classilla to hang up when you quit. POP works fine on other servers, so it is not clear why.
+The short answer is, right now you don't. Instead, use IMAP. The long answer is POP on Gmail for some reason causes Classilla to hang up when you quit. POP works fine on other servers, so it is not clear why and this is being investigated. In the meantime ...
 
 ==How do I get Classilla set up to use Gmail's IMAP server then?==
 The [http://mail.google.com/support/bin/answer.py?answer=78799 standard settings that Google recommends] will work, but here they are for reference:
