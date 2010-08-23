@@ -56,7 +56,7 @@ However, if you have *a 68K Mac with a PowerPC card* such as any of the 601-base
 *If you are using such a setup, please see issue 117 ASAP.*
 
 ==Is Classilla localized or available in other languages?==
-Not yet, but this is planned. *However, there are already unofficial builds that some users have created themselves; while these are technically unsupported, they should work just fine.* Eventually there will be official builds incorporating these user translations once all the localizable strings have stabilized.
+Not yet, but this is planned for 9.2.2. *However, there are already unofficial builds that some users have created themselves; while these are technically unsupported, they should work just fine.* Eventually there will be official builds incorporating these user translations once all the localizable strings have stabilized.
 
 Here are the user-contributed translations so far (send new ones to classilla at floodgap dawt com):
 
@@ -76,7 +76,7 @@ This is a known and unfortunately unfixable bug due to the way plugins in genera
 If this really bugs you, you can disable plugins completely by going to Preferences > Advanced > Performance and checking Disable plugins.
 
 ==Does Classilla support Java?==
-Yes, but only the version of Macintosh Runtime for Java that Apple provides with your version of Mac OS. *There are known security problems in all classic Mac OS versions of the MRJ and its use is strongly discouraged.* By default, Java is forced off in new profiles. You can turn it on from the preferences panel, but you should only use it on trusted sites. You will need to have plugins enabled.
+Yes, but only the version of Macintosh Runtime for Java that Apple provides with your version of Mac OS. *There are known security problems in all classic Mac OS versions of the MRJ and its use is strongly discouraged.* By default, Java is forced off in new profiles. You can turn it on from the preferences panel, but you should only use it on trusted sites. You will need to have plugins enabled and ensure that the MRJ Plugin is in your plugins folder (it comes with Classilla 9.2.1 and later).
 
 ==Will Classilla support HTML 5?==
 Certain portions will be supported (and some actually already are invisibly). The most visible features such as CANVAS tags, however, will require extensive work for Clecko's non-Cairo-based graphics architecture, and features such as VIDEO and AUDIO tags may never be supported due to poor codec availability for OS 9. Networking support may also be difficult to integrate with the older Clecko codebase. There are no promises, let alone an ETA, for any of these features. On the other hand, most document-based tags are easy to incorporate into Classilla's parser and many of these are or will be supported.
@@ -92,9 +92,9 @@ There are several layout glitches that can cause Classilla to slow down dramatic
 A few pages are not compatible with the way Classilla currently scrolls the screen. *You can use an alternative (though possibly slower) method of scrolling by holding down the Command key as you scroll.* If you are on a site where you have to do this frequently, you can toggle the default setting by going to View > Use Slow Scroll, or pressing Cmd-Shift-S. This setting is sticky and stays until you turn it off.
 
 ==!JavaScript doesn't work in Classilla.==
-Classilla uses its own special version of !NoScript to help reduce possible security and stability problems.
+Classilla uses Script-B-Gone, its own special front end to !NoScript, to help reduce possible security and stability problems.
 
-By default, *!NoScript is configured to block all !JavaScript* except on certain pages where it must be enabled. !NoScript appears in your Classilla window as a little "S" at the lower right which you can click to change its settings: either add the current website name to the white list, or, if you are adventurous or reckless, allow it on all pages. For more information, see the [http://www.classilla.org/releases/ Release Notes].
+By default, *Script-B-Gone is configured to block all !JavaScript* except on certain pages where it must be enabled. Script-B-Gone appears in your Classilla window as a little "S" at the lower right (the !NoScript logo) which you can click to change its settings: either add the current website to the white list, or, if you are adventurous or reckless, allow it on all pages by clicking Options for advanced settings. For more information, see the [http://www.classilla.org/releases/ Release Notes].
 
 ==When !JavaScript is on, clicking on certain links doesn't work.==
 There are two possible reasons:
@@ -116,10 +116,13 @@ Note that touching certain elements of the page or moving your mouse may also ca
 ==Will Classilla's !JavaScript and layout/DOM support be updated?==
 Starting with Classilla 9.2, Classilla now uses a minimally modified version of !SpiderMonkey, the exact same !JavaScript interpreter Mozilla uses in Firefox 3.0.19. This interpreter is much faster and more stable than the one in previous versions of Classilla or WaMCom, and repairs many inadequacies. Plans to convert !TraceMonkey, an accelerated version with just-in-time compilation, are also being considered.
 
-That said, the Document Object Model (the piece that connects !JavaScript to the web page) is still fairly out-of-date and many sites relying on very current features still won't work completely. Because document layout and the DOM are closely linked, they must be updated together, which is a large task. Nevertheless, a comprehensive revision of layout and DOM is scheduled for Classilla 9.3.
+That said, the Document Object Model (the piece that connects !JavaScript to the web page) is still fairly out-of-date and many sites relying on very current features still won't work completely. Because document layout and the DOM are closely linked, they must be updated together, which is a large task. Nevertheless, a comprehensive revision of layout and DOM is scheduled for Classilla 9.3.0.
 
 ==Classilla disables Sherlock 2 on my non-English Mac.==
 If you are using a non-English keyboard and running Sherlock 2 and Classilla at the same time, your keyboard will not work in Sherlock 2 (it will work fine elsewhere). This can be solved by temporarily switching to an English keyboard layout. It is currently being debated whether this is a Mozilla or Mac OS/Sherlock bug.
+
+==Non-Roman character sets don't appear right under Mac OS 9.2.==
+The Unicode converter built into Mac OS 9.2 is not fully compatible with Classilla. It works correctly with OS 9.1. This is a known bug and is being investigated.
 
 ==Why doesn't Classilla support Chatzilla?==
 Chatzilla's final release under Classilla was with 9.0.4. It no longer appears in 9.1 and versions thereafter due to multiple known security flaws and difficulty integrating later versions with Classilla's older code base. There are many better IRC clients for Mac OS 9; you should use one of those instead. If you must use Chatzilla, you are limited to 9.0 and 9.0.4 (or WaMCom, etc.).
