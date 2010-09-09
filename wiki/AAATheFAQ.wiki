@@ -83,6 +83,9 @@ Certain portions will be supported (and some actually already are invisibly). Th
 
 Currently, however, the highest priority is making sure that HTML 4.01 and CSS 2 are supported to a functional level; this is incomplete, but improving.
 
+==Classilla says I don't have the Contextual Menu Extension and won't start.==
+That's because you don't. The Contextual Menu Extension is a standard part of Mac OS 8.6 and 9, and should have come with your operating system. However, it is possible that it may have been inadvertently disabled (check the `Extensions (Disabled)` folder) or deleted. If so, consider reinstalling your OS, or copying the extension from another computer. Classilla requires this extension to run and cannot start without it.
+
 ==Some pages render really slowly.==
 There are several layout glitches that can cause Classilla to slow down dramatically on sites with complex or pathologic layouts. You can all-stop the browser by holding Cmd-Period down until you get control back. Note that when you do this, everything in layout stops and the current executing script (if any) stops as well, so the page might not appear correctly. However, this is safer than Force Quit, so try using all-stop first if Classilla seems to have stopped responding for awhile.
 
