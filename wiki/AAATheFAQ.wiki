@@ -42,9 +42,9 @@ Again, you should *not* file Bugzilla issues for Classilla.
 ==Can I run Classilla on OS X?==
 Yes. In fact, Classilla may be the best browser option for you if you are running a very old version of OS X such as 10.0 or 10.1, but you must run it in Classic as it is not Carbonized. Reports from 10.2 users also indicate that it performs better than !SeaMonkey 1.1.x in some circumstances, so a combination may be your best best for Jaguar.
 
-If you are looking for a general OS X browser for PPC, however, there are better choices in later versions. For 10.3, Camino 1.6.11 (though EOL) still performs relatively well, and 10.4 is still currently supported by most browsers, including Firefox 3.6.x, Camino 2.0.x and 2.1.x, and !SeaMonkey 2.0.x (plus Safari 4.1.1, !OmniWeb 5.x, !iCab 4, etc.). Nevertheless, each version of Classilla is tested on 10.4 Classic before release.
+If you are looking for a general OS X browser for PPC, however, there are better choices in later versions. For 10.3, Camino 1.6.11 (though EOL) still performs relatively well, and 10.4-10.5 have a maintained PowerPC Firefox branch with [http://www.tenfourfox.com/ TenFourFox], our sister project.
 
-Please note that depending on your version of OS X, the Classic environment may (in some cases noticibly) degrade Classilla's performance. Classilla is naturally always fastest in a native, non-emulated environment.
+Nevertheless, each version of Classilla is tested on 10.4 Classic before release and is fully compatible. Please note that depending on your version of OS X, the Classic environment may (in some cases noticibly) degrade Classilla's performance. Classilla is naturally always fastest in a native, non-emulated environment.
 
 To run Classilla on an Intel Macintosh or on 10.5 or later, since neither support Classic, you must use an emulator such as !SheepShaver. Although it is not officially supported, people have used Classilla on !SheepShaver and demonstrated that it runs well. !SheepShaver on BeOS is also compatible. Again, its performance under emulation may be significantly impacted. Classilla does not run under Basilisk II, because that is a 68K Mac emulator (see the next question).
 
