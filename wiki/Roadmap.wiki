@@ -40,13 +40,13 @@ Classilla 9.2.1 was released on August 22nd, 2010.
 
 This will be the sixth release of Classilla. This will be a bugfix rollup only, repairing any regressions caused by 9.2.1 and any new bugs introduced by Script-B-Gone. The only new feature will be the official introduction of language packs into the core browser.
 
-Classilla 9.2.2 is expected to be released in Q4 2010.
+Classilla 9.2.2 is expected to be released in Q1 2011.
 
 ==Classilla 9.3.0==
 
 This will be the seventh release of Classilla and the first version with a "unique" version number, since the OS 9 version numbering motif will have been exhausted. Starting with 9.3.0, Classilla will be numbered according to a conventional major-minor-patch scheme. This release will specifically focus on upgrades to layout and will be a comprehensive update to both layout and DOM based on later Mozilla sources, hand-translated to Classilla's code base.
 
-There is currently no ETA for 9.3.0.
+Classilla 9.3.0 is expected to be released in Q3 2011.
 
 ==Classilla 9.3.1==
 
