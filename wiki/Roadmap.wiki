@@ -46,7 +46,7 @@ Classilla 9.2.2 is expected to be released on March 30th, 2011.
 
 This will be the seventh release of Classilla and the first version with a "unique" version number, since the OS 9 version numbering motif will have been exhausted. Starting with 9.3.0, Classilla will be numbered according to a conventional major-minor-patch scheme. This release will specifically focus on upgrades to layout and will be a comprehensive update to both layout and DOM based on later Mozilla sources, hand-translated to Classilla's code base.
 
-Classilla 9.3.0 is expected to be released in Q3 2011.
+Classilla 9.3.0 is expected to be released in Q4 2011.
 
 ==Classilla 9.3.1==
 
