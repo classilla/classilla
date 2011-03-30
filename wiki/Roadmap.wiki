@@ -32,7 +32,7 @@ Classilla 9.2 was released on June 4th, 2010.
 
 ==Classilla 9.2.1==
 
-This is the fifth release of Classilla. This version repaired various regressions caused by 9.2, and also introduces Script-B-Gone, a Classilla-specific front-end to !NoScript. Various browser bugs are also repaired in this release, and strings are now frozen to allow language packs to be officially supported in 9.2.2.
+This was the fifth release of Classilla. This version repaired various regressions caused by 9.2, and also introduces Script-B-Gone, a Classilla-specific front-end to !NoScript. Various browser bugs are also repaired in this release, and strings are now frozen to allow language packs to be officially supported in 9.2.2.
 
 Classilla 9.2.1 was released on August 22nd, 2010.
 
