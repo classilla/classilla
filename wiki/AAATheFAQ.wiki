@@ -57,13 +57,9 @@ However, if you have *a 68K Mac with a PowerPC card* such as any of the 601-base
 No, for the same reasons as above; Classilla's runtime depends on certain features of Mac OS 8.5 and higher such as ATSUI and Unicode support. Again, there has been some talk of disabling the portions of Classilla that depend on these features or backporting the needed OS libraries, but this work is unlikely to be done in the near future and such a modification would also severely limit its usefulness for multilingual pages. Likewise also, many of the Macintoshes limited to these OS versions have significant memory pressure and Classilla has never been particularly thrifty with RAM. In short, while such a "Classilla 7" is theoretically possible, a fair amount of work would be needed to get it mounted, it would not be as functional as standard Classilla, and it would detract from our top priority which is to be as compatible with modern websites as possible.
 
 ==Is Classilla localized or available in other languages?==
-Not yet, but this is planned for 9.2.2. *However, there are already unofficial builds that some users have created themselves; while these are technically unsupported, they should work just fine.* Eventually there will be official builds incorporating these user translations once all the localizable strings have stabilized.
+Yes. Classilla as of 9.2.2 comes with Japanese (日本語) and German (Deutsch) translations. You can select the translation for your profile by going to Preferences > Language/Content, and selecting your desired language and/or region. Remember, restart immediately after changing the language, or the interface may behave incorrectly.
 
-Here are the user-contributed translations so far (send new ones to classilla at floodgap dawt com):
-
-  * Japanese (日本語): http://page.freett.com/macos9/classilla/
-
-If you'd like to try creating your own, see [http://www-archive.mozilla.org/projects/l10n/mlp_howto.html How to localize Mozilla] (which will also work for the older code in Classilla).
+If you'd like to try creating your own, see [http://www-archive.mozilla.org/projects/l10n/mlp_howto.html How to localize Mozilla] (which will also work for the older code in Classilla). If you would like to contribute to the project as a translator, see issue 151.
 
 ==Does Classilla support plugins?==
 Classilla runs most NPAPI plugins, but most OS 9 compatible plugins are no longer updated and some many have security issues (see the question on Flash below). That said, they may still be useful if you require their capabilities, *but using these old versions is at your own risk.* George Serban maintains a list of Classilla-compatible plugins at http://cherwally.webs.com/Classilla/Plugins.html
