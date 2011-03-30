@@ -38,7 +38,7 @@ Classilla 9.2.1 was released on August 22nd, 2010.
 
 ==Classilla 9.2.2==
 
-This is the sixth release of Classilla. This is be a bugfix rollup only, repairing interface, system and security bugs, regressions caused by 9.2.1, and new bugs introduced by Script-B-Gone. The only new feature is the official introduction of language packs into the core browser, starting with Japanese and German.
+This is the sixth release of Classilla. This is a bugfix rollup only, repairing interface, system and security bugs; regressions caused by 9.2.1; and new bugs introduced by Script-B-Gone. The only new feature is the official introduction of language packs into the core browser, starting with Japanese and German.
 
 Classilla 9.2.2 was released on March 29th, 2011.
 
