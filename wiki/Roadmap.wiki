@@ -42,14 +42,20 @@ This is the sixth release of Classilla. This is a bugfix rollup only, repairing 
 
 Classilla 9.2.2 was released on March 29th, 2011.
 
+==Classilla 9.2.3==
+
+This will be the seventh release of Classilla. This will be another bugfix rollup covering important and critical issues that have occurred between 9.2.2 and 9.3.0 to get these fixes to users while the layout merge is completed. No new features will be introduced with this release.
+
+Classilla 9.2.3 is expected to be released in Q3 2011.
+
 ==Classilla 9.3.0==
 
-This will be the seventh release of Classilla and the first version with a "unique" version number, since the OS 9 version numbering motif will have been exhausted. Starting with 9.3.0, Classilla will be numbered according to a conventional major-minor-patch scheme. This release will specifically focus on upgrades to layout and will be a comprehensive update to both layout and DOM based on later Mozilla sources, hand-translated to Classilla's code base.
+This will be the eighth release of Classilla. Starting with 9.3.0, Classilla will be numbered according to a conventional major-minor-patch scheme. This release will specifically focus on upgrades to layout and will be a comprehensive update to both layout and DOM based on later Mozilla sources, hand-translated to Classilla's code base.
 
-Classilla 9.3.0 is expected to be released in Q4 2011.
+Classilla 9.3.0 is expected to be released in Q1 2012.
 
 ==Classilla 9.3.1==
 
-This will be the eighth release of Classilla. This will be a security rollup, focusing on the new layout architecture and bringing the browser to security parity as much as possible with Mozilla Firefox and !SeaMonkey, along with fixing the most important regressions introduced with 9.3.0. With this release, Classilla will hopefully make the transition from perpetual alpha state to beta.
+This will be the ninth release of Classilla. This will be a security rollup, focusing on the new layout architecture and bringing the browser to security parity as much as possible with Mozilla Firefox and !SeaMonkey, along with fixing the most important regressions introduced with 9.3.0. With this release, Classilla will hopefully make the transition from perpetual alpha state to beta.
 
 There is currently no ETA for 9.3.1.
