@@ -62,7 +62,7 @@ Yes. Classilla as of 9.2.2 comes with Japanese (日本語) and German (Deutsch) 
 If you'd like to try creating your own, see [http://www-archive.mozilla.org/projects/l10n/mlp_howto.html How to localize Mozilla] (which will also work for the older code in Classilla). If you would like to contribute to the project as a translator, see issue 151.
 
 ==Does Classilla support plugins?==
-Classilla runs most NPAPI plugins, but most OS 9 compatible plugins are no longer updated and some many have security issues (see the question on Flash below). That said, they may still be useful if you require their capabilities, *but using these old versions is at your own risk.* George Serban maintains a list of Classilla-compatible plugins at http://cherwally.webs.com/Classilla/Plugins.html
+Classilla runs most NPAPI plugins, but most OS 9 compatible plugins are no longer updated and many have security issues (see the question on Flash below). That said, they may still be useful if you require their capabilities, *but using these old versions is at your own risk.* George Serban maintains a list of Classilla-compatible plugins at http://cherwally.webs.com/Classilla/Plugins.html
 
 ==Does Classilla support Flash?==
 Yes, but OS 9 support was dropped after Flash 7. *There are known security problems in that version of Adobe Flash Player and its use is strongly discouraged.* Still, this is enough to surf many sites and even view many videos, although people have reported synchronization issues with certain codecs. Your humble author, however, does not use it.
@@ -119,7 +119,7 @@ Note that touching certain elements of the page or moving your mouse may also ca
 ==Will Classilla's !JavaScript and layout/DOM support be updated?==
 Starting with Classilla 9.2, Classilla now uses a minimally modified version of !SpiderMonkey, the exact same !JavaScript interpreter Mozilla uses in Firefox 3.0.19. This interpreter is much faster and more stable than the one in previous versions of Classilla or WaMCom, and repairs many inadequacies. Plans to convert !TraceMonkey, an accelerated version with just-in-time compilation, are also being considered.
 
-That said, the Document Object Model (the piece that connects !JavaScript to the web page) is still fairly out-of-date and many sites relying on very current features still won't work completely. Because document layout and the DOM are closely linked, they must be updated together, which is a large task. Nevertheless, a comprehensive revision of layout and DOM is scheduled for Classilla 9.3.0.
+That said, the Document Object Model (the piece that connects !JavaScript to the web page) is still fairly out-of-date and many sites relying on very current features still won't work completely. It is strongly advised to seek mobile content, which suffers much less from this problem.
 
 ==Classilla disables Sherlock 2 on my non-English Mac.==
 If you are using a non-English keyboard and running Sherlock 2 and Classilla at the same time, your keyboard will not work in Sherlock 2 (it will work fine elsewhere). This can be solved by temporarily switching to an English keyboard layout. It is currently being debated whether this is a Mozilla or Mac OS/Sherlock bug.
