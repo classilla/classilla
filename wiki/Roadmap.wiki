@@ -50,7 +50,7 @@ Classilla 9.2.3 was released on October 11th, 2011.
 
 ==Classilla 9.3.0==
 
-This will be the eighth release of Classilla. Starting with 9.3.0, Classilla will be numbered according to a conventional major-minor-patch scheme. This release will convert Classilla into a browser focused on the mobile web, optimized for the slower/smaller systems limited to OS 8.6 and OS 9, by adding interface features for controlling styles, page content and user agent dynamically. This release also introduces Byblos, Classilla's dynamic HTML rewriting engine, and fixes several security and stability issues.
+This will be the eighth release of Classilla. Starting with 9.3.0, Classilla will be numbered according to a conventional major-minor-patch scheme. This release will convert Classilla into a browser focused on the mobile web, optimized for the slower/smaller systems limited to OS 8.6 and OS 9. This release also introduces Byblos, Classilla's dynamic HTML rewriting engine, and fixes several security and stability issues.
 
 Classilla 9.3.0 is expected to be released February 1st, 2012.
 
