@@ -44,18 +44,18 @@ Classilla 9.2.2 was released on March 29th, 2011.
 
 ==Classilla 9.2.3==
 
-This is the seventh release of Classilla. This is another bugfix rollup covering important and critical issues that have occurred between 9.2.2 and 9.3.0 to get these fixes to users while the internal redesign is completed. No new features are introduced with this release.
+This was the seventh release of Classilla. This was another bugfix rollup covering important and critical issues that occurred between 9.2.2 and 9.3.0 to get these fixes to users while the internal redesign was completed. No new features were introduced with this release.
 
 Classilla 9.2.3 was released on October 11th, 2011.
 
 ==Classilla 9.3.0==
 
-This will be the eighth release of Classilla. Starting with 9.3.0, Classilla will be numbered according to a conventional major-minor-patch scheme. This release will convert Classilla into a browser focused on the mobile web, optimized for the slower/smaller systems limited to OS 8.6 and OS 9. This release also introduces Byblos, Classilla's dynamic HTML rewriting engine, and fixes several security and stability issues.
+This is the eighth release of Classilla. Starting with 9.3.0, Classilla will be numbered according to a conventional major-minor-patch scheme. This release converts Classilla into a browser focused on the mobile web, optimized for the slower/smaller systems limited to OS 8.6 and OS 9. This release also introduces Byblos, Classilla's dynamic HTML rewriting engine, and fixes several security and stability issues.
 
-Classilla 9.3.0 is expected to be released February 1st, 2012.
+Classilla 9.3.0 was released on January 20th, 2012.
 
 ==Classilla 9.3.1==
 
 This will be the ninth release of Classilla. This will be a security rollup, focusing on the new layout architecture and bringing the browser to security parity as much as possible with Mozilla Firefox and !SeaMonkey, along with fixing the most important regressions introduced with 9.3.0. Processor-specific versions will also be considered.
 
-There is currently no ETA for 9.3.1.
+Classilla 9.3.1 is expected to be released late Q2 2012.
