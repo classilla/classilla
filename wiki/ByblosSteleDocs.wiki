@@ -51,9 +51,11 @@ In our case, this stele returns true for any URI it gets (it will only be presen
 By now, people unfamiliar with Mozilla will wonder what an `nsIURI` is, and will already have visited MDN's [https://developer.mozilla.org/en/nsIURI nsIURI Documentation]. In doing so, you will have executed a stele that comes by default with Classilla which cleans up the MDN pages somewhat. Here is how it appears in 9.3.0:
 
 {{{
+
 /* Clean up the header for developer.mozilla.org.
    Cameron Kaiser
    Public domain. */
+
 
 function() {
         return {
@@ -70,7 +72,11 @@ function() {
                         // Remove the mozilla-tab.
                         answer = answer.replace(/<a id="moz-tab"/, "<a");
                         // Remove the stupid JavaScript whine.
+}}}
+{{{
                         answer = answer.replace(/<div class="noscript">.+<\/div><\/noscript>/, "</noscript>");
+}}}
+{{{
                         // Remove the styling from the h1 title.
                         answer = answer.replace(/<h1 id="logo">/,
                                 "<h1 style=\"color: #404040\">");
@@ -85,6 +91,7 @@ function() {
                 }
         };
 };
+
 }}}
 
 This example actually is not much more complicated. It checks the path of the URI to see if it's something it can help with. The MDN main page has lots of links and widgets which Classilla can't render right even with help (it lacks those facilities), so there is no point in taking the Byblos performance hit there (more about that in the next section) and it returns `false` (prompting Byblos to simply fall through to the default handlers). In the HTML rewriting portion, it's the same basic idea as the `g00G13` example except we're removing portions of the page and entirely rewriting others.
