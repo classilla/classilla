@@ -22,9 +22,13 @@ There are so many sites that still don't work, and so many Bugzilla bugs to revi
 
 Do you think you could help? Send a message to classilla at floodgap dawt com.
 
+===Stelenerds===
+
+If you've found a problem _and_ you've fixed it with a !JavaScript Byblos stele as described in ByblosSteleDocs, open an issue and attach it. We're only taking the best and most important, but you can help your fellow users by contributing your recipes for success!
+
 ===Coders===
 
-If you can program C/C++, particularly the Metrowerks idiosyncracies, we really have a use for you and that use is obvious.
+Better still: if you can program C/C++, particularly the Metrowerks idiosyncracies, we really have a use for you and that use is obvious.
 
 No, you don't have to know the first thing about the Mac toolbox, and if a clod like Cameron can learn the guts of Mozilla, then so can you. The great thing about Clecko is that Mozilla wrote Gecko using cross-platform code instead of idiosyncratic Mac code, so if you understand C (and better still if you've written Firefox extensions or other things leveraging XPCOM), you can contribute.
 
