@@ -1,4 +1,5 @@
 #summary Frequently asked user questions. READ ME FIRST!
+#labels Featured
 
 *Please don't modify this document unless you are authorized to do so.*
 
