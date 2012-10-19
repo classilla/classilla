@@ -56,6 +56,6 @@ Classilla 9.3.0 was released on January 20th, 2012.
 
 ==Classilla 9.3.1==
 
-This will be the ninth release of Classilla. This will be a security rollup, focusing on the new layout architecture and bringing the browser to security parity as much as possible with Mozilla Firefox and !SeaMonkey, along with fixing the most important regressions introduced with 9.3.0. Processor-specific versions will also be considered.
+This will be the ninth release of Classilla. This will be a security rollup, focusing on the new layout architecture and bringing the browser to security parity as much as possible, along with fixing the most important regressions introduced with 9.3.0.
 
-Classilla 9.3.1 is expected to be released late Q2 2012.
+Classilla 9.3.1 is expected to be released October 19, 2012.
