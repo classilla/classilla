@@ -14,7 +14,7 @@ So Byblos works at a lower level than Greasemonkey and allows you to dynamically
 
 Stelae are dynamic and bulletproof. You can modify them while the browser is running; you can disable them simply by moving them out of the Byblos folder (in the Classilla folder) as the browser is running; and even if you make a mistake or syntax error, the browser continues to function (the stele just doesn't work). This makes it easy to fine-tune your code on the fly. They are written in !JavaScript and use a simple API, allowing anyone with a basic knowledge of the language to write one with just a text editor (we recommend BBEdit 6).
 
-Stelae do _not_ translate images, plain text, Gopher or FTP menus, or the source you see when you select `View Source` (this is intentional, so that you can see the original layout of the page HTML as you write your stele's code). Stelae also do not translate data received through `XMLHttpRequest`s, even if that data is HTML, due to technical constraints. Stelae do not currently translate CSS, although you can add `<style>` tags to simulate this to your page. CSS rewriting is being considered for a future version.
+Stelae do _not_ translate images, plain text, HTML files on disk, Gopher menus or FTP directory listings. Stelae also do not translate data received through `XMLHttpRequest`s, even if that data is HTML, due to technical constraints. Stelae do not currently translate CSS, although you can add `<style>` tags to simulate this to your page. CSS rewriting is being considered for a future version.
 
 ==Writing your first stele==
 
