@@ -1,4 +1,4 @@
-#summary How to write translation stelae for Byblos, Classilla's HTML rewrite engine.
+#summary How to write translation stelae for Byblos, Classilla's HTML and CSS rewrite engine.
 
 *Byblos was introduced in Classilla 9.3.0. This document does not apply to 9.2.3 or previous versions of Classilla.*
 
@@ -14,7 +14,9 @@ So Byblos works at a lower level than Greasemonkey and allows you to dynamically
 
 Stelae are dynamic and bulletproof. You can modify them while the browser is running; you can disable them simply by moving them out of the Byblos folder (in the Classilla folder) as the browser is running; and even if you make a mistake or syntax error, the browser continues to function (the stele just doesn't work). This makes it easy to fine-tune your code on the fly. They are written in !JavaScript and use a simple API, allowing anyone with a basic knowledge of the language to write one with just a text editor (we recommend BBEdit 6).
 
-Stelae do _not_ translate images, plain text, HTML files on disk, Gopher menus or FTP directory listings. Stelae also do not translate data received through `XMLHttpRequest`s, even if that data is HTML, due to technical constraints. Stelae do not currently translate CSS, although you can add `<style>` tags to simulate this to your page. CSS rewriting is being considered for a future version.
+In 9.3.2 and later versions of Classilla, you can also write stelae to rewrite style sheets.
+
+Stelae do _not_ translate images, plain text, HTML files on disk, Gopher menus or FTP directory listings. Stelae also do not translate data received through `XMLHttpRequest`s, even if that data is HTML, due to technical constraints.
 
 ==Writing your first stele==
 
@@ -97,6 +99,22 @@ function() {
 This example actually is not much more complicated. It checks the path of the URI to see if it's something it can help with. The MDN main page has lots of links and widgets which Classilla can't render right even with help (it lacks those facilities), so there is no point in taking the Byblos performance hit there (more about that in the next section) and it returns `false` (prompting Byblos to simply fall through to the default handlers). In the HTML rewriting portion, it's the same basic idea as the `g00G13` example except we're removing portions of the page and entirely rewriting others.
 
 In fact, you could even just take a piece of the page into a temporary variable and write out a new page with just that piece in it, such as for a video player site. The piece would just be the video link, and chaff such as snarky comments and ads would simply be eliminated because you would never pass them back to the browser. *Nothing says that what you spit out has to be anything like what you took in.* The key idea for Byblos is functionality, not rendering fidelity.
+
+==Rewriting CSS (9.3.2 and later)==
+
+In Classilla 9.3.2, Byblos can also be used to rewrite style sheets. Note that this only works for standalone style sheets; inline styles and inline style sheets are still done in the HTML stelae.
+
+The idea is the same, except your two-slot return object should have functions for `wantURI` and `parseCSS` (instead of `wantURI` and `parseHTML`). Otherwise, the return convention is the same.
+
+To indicate that the stelae is for CSS and not HTML, you place it in the `" CSS"` (note leading space) folder inside the `Byblos` folder.
+
+A handy trivial situation is to return no CSS at all. This would be useful on sites where you want to completely, or mostly, destyle them automatically. Just return a response of `"ok"` as usual, but a body that is an empty string (`""`).
+
+==Controlling domains and subdomains (9.3.2 and later)==
+
+Occasionally you want to handle a site in general one way, but certain subdomains another. Say that you want `mail.foobar.invalid` handled specifically, but everything else on `foobar.invalid` should be handled another way, such as `maps.foobar.invalid` and `beer.foobar.invalid`.
+
+As usual, you will name your stele for `mail.foobar.invalid` as `mail.foobar.invalid.js`. But for the fallback, name it `ANY..foobar.invalid` (notice the double period). This will be then applied to any domain name `*.foobar.invalid` _after_ a search for that specific domain has failed.
 
 ==Performance considerations==
 
