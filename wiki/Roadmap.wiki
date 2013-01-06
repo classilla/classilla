@@ -62,12 +62,18 @@ Classilla 9.3.1 was released on October 19th, 2012.
 
 ==Classilla 9.3.2==
 
-This will be the tenth release of Classilla. This will be the second security rollup. The rewrite engine may also be extended for CSS style sheets as well.
+This will be the tenth release of Classilla. This will be the second security rollup, and will also include regression fixes from 9.3.1. Byblos CSS support will also be introduced in this release.
 
-Classilla 9.3.2 has an ETA of Q2 2013.
+Classilla 9.3.2 is scheduled for release on January 7th, 2013.
 
 ==Classilla 9.3.3==
 
-This will be the eleventh release of Classilla. This will be the third and hopefully final security rollup. Additional user facing features may be exposed in this release and strings may be unfrozen.
+This will be the eleventh release of Classilla. This will be the third security rollup.
 
-There is no ETA currently for Classilla 9.3.3.
+Classilla 9.3.3 has an ETA of Q2 2013.
+
+==Classilla 9.3.4==
+
+This will be the twelfth release of Classilla. This will be the fourth and hopefully final security rollup.
+
+There is no ETA currently for Classilla 9.3.4.
