@@ -104,7 +104,7 @@ In fact, you could even just take a piece of the page into a temporary variable 
 
 In Classilla 9.3.2, Byblos can also be used to rewrite style sheets. Note that this only works for standalone style sheets; inline styles and inline style sheets are still done in the HTML stelae.
 
-The idea is the same, except your two-slot return object should have functions for `wantURI` and `parseCSS` (instead of `wantURI` and `parseHTML`). Otherwise, the return convention is the same.
+The idea is the same, except your two-slot return object should have functions for `wantURI()` and `parseCSS()` (instead of `wantURI()` and `parseHTML()`). Otherwise, the convention is the same.
 
 To indicate that the stelae is for CSS and not HTML, you place it in the `" CSS"` (note leading space) folder inside the `Byblos` folder.
 
@@ -114,7 +114,7 @@ A handy trivial situation is to return no CSS at all. This would be useful on si
 
 Occasionally you want to handle a site in general one way, but certain subdomains another. Say that you want `mail.foobar.invalid` handled specifically, but everything else on `foobar.invalid` should be handled another way, such as `maps.foobar.invalid` and `beer.foobar.invalid`.
 
-As usual, you will name your stele for `mail.foobar.invalid` as `mail.foobar.invalid.js`. But for the fallback, name it `ANY..foobar.invalid` (notice the double period). This will be then applied to any domain name `*.foobar.invalid` _after_ a search for that specific domain has failed.
+As usual, you will name your stele for `mail.foobar.invalid` as `mail.foobar.invalid.js`. But for the fallback, name it `ANY..foobar.invalid.js` (notice the double period). This will be then applied to any domain name `*.foobar.invalid` _after_ a search for that specific domain has failed.
 
 ==Performance considerations==
 
