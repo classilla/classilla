@@ -68,12 +68,12 @@ Classilla 9.3.2 was released on January 6th, 2013.
 
 ==Classilla 9.3.3==
 
-This will be the eleventh release of Classilla. This will be the third security rollup.
+This will be the eleventh release of Classilla. This is a major overhaul of the browser's encryption suite, including SHA-256 certificate support and improvements to TLS. This release also improves Byblos support and fixes several smaller bugs.
 
-Classilla 9.3.3 has an ETA of Q2 2013.
+Classilla 9.3.3 has an ETA of Q4 2014.
 
 ==Classilla 9.3.4==
 
-This will be the twelfth release of Classilla. This will be the fourth and hopefully final security rollup.
+This will be the twelfth release of Classilla. This will be the fourth security rollup.
 
 There is no ETA currently for Classilla 9.3.4.
