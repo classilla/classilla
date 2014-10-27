@@ -62,6 +62,21 @@ Yes. Classilla as of 9.2.2 comes with Japanese (日本語) and German (Deutsch) 
 
 If you'd like to try creating your own, see [http://www-archive.mozilla.org/projects/l10n/mlp_howto.html How to localize Mozilla] (which will also work for the older code in Classilla). If you would like to contribute to the project as a translator, see issue 151.
 
+==Does Classilla support TLS or SSL?==
+Classilla supports TLSv1, SSLv2 and SSLv3. Of the three, TLS is the most preferred and highest level of security, while SSL is an older encryption technology predating TLS. SSLv2 is no longer secure and should no longer be used; it is disabled by default starting in Classilla 9.3.3 and will be removed completely in a future version. SSLv3 is still available but is considered deprecated due to intrinsic flaws in the protocol and will be disabled by default in a future version. In addition, "export-only" low-key-length symmetric ciphers are also considered deprecated and will be disabled by default in a future version.
+
+Classilla does support TLSv1, but versions prior to 9.3.3 did not support certain features which may cause sites to renegotiate SSLv3. In 9.3.3, support for Server Name Indication (SNI) was added, which improves verification of certain secure websites.
+
+Classilla's encryption package does not currently include higher performance elliptic curve support, but does support regular Diffie-Hellman exchange for forward secrecy. For example, DHE-RSA-AES256-SHA is fully supported.
+
+==Some secure websites give me an error -8182.==
+These sites use SHA-256 certificates for TLS. This support was added in Classilla 9.3.3.
+
+==Some secure websites give me a dialogue box saying the site could not be verified.==
+Classilla allows you to override certain checks on certificate identity when you know or trust that the network and site you're connecting to have not been compromised. For example, if the domain name is slightly different, or the certificate is recently expired, you may receive this box but the certificate may still be perfectly safe to accept temporarily. You receive this box if the certificate name differs, the certificate is expired, it is signed by a certificate authority you don't currently accept, or, starting in 9.3.3, if the certificate is signed with an algorithm that Classilla does not yet understand.
+
+You should examine the certificate and decide what to do and how long you want the exception to last. There is no good rule of thumb on when this is safe to do, although *a site that used to work and suddenly fails to work, especially on a different network, should be considered an indication your connection is _not_ safe.* Remember: if you override a certificate check, you are telling Classilla that verification is not required or possible, which may cause you to send information to an unauthorized third party which is masquerading as the trusted site. Be cautious when approving these requests.
+
 ==Does Classilla support plugins?==
 Classilla runs most NPAPI plugins, but most OS 9 compatible plugins are no longer updated and many have security issues (see the question on Flash below). That said, they may still be useful if you require their capabilities, *but using these old versions is at your own risk.* George Serban maintains a list of Classilla-compatible plugins at http://cherwally.webs.com/Classilla/Plugins.html
 
