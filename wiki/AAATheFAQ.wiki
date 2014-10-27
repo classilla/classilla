@@ -57,6 +57,9 @@ However, if you have *a 68K Mac with a PowerPC card* such as any of the 601-base
 ==Can I run Classilla on 7.x, 8.0 or 8.1?==
 No, for the same reasons as above; Classilla's runtime depends on certain features of Mac OS 8.5 and higher such as ATSUI and Unicode support. Again, there has been some talk of disabling the portions of Classilla that depend on these features or backporting the needed OS libraries, but this work is unlikely to be done in the near future and such a modification would also severely limit its usefulness for multilingual pages. Likewise also, many of the Macintoshes limited to these OS versions have significant memory pressure and Classilla has never been particularly thrifty with RAM. In short, while such a "Classilla 7" is theoretically possible, a fair amount of work would be needed to get it mounted, it would not be as functional as standard Classilla, and it would detract from our top priority which is to be as compatible with modern websites as possible.
 
+==Classilla says I don't have the Contextual Menu Extension and won't start.==
+That's because you don't. The Contextual Menu Extension is a standard part of Mac OS 8.6 and 9, and should have come with your operating system. However, it is possible that it may have been inadvertently disabled (check the `Extensions (Disabled)` folder) or deleted. If so, consider reinstalling your OS, or copying the extension from another computer. Classilla requires this extension to run and cannot start without it.
+
 ==Is Classilla localized or available in other languages?==
 Yes. Classilla as of 9.2.2 comes with Japanese (日本語) and German (Deutsch) translations. You can select the translation for your profile by going to Preferences > Language/Content, and selecting your desired language and/or region. Remember, restart immediately after changing the language, or the interface may behave incorrectly.
 
@@ -88,9 +91,6 @@ With the added support in 9.3.3 and later versions, this situation should be muc
 Certain portions will be supported (and some actually already are invisibly). The most visible features such as CANVAS tags, however, will require extensive work for Clecko's non-Cairo-based graphics architecture, and features such as VIDEO and AUDIO tags may never be supported due to poor codec availability for OS 9. Networking support may also be difficult to integrate with the older Clecko codebase. There are no promises, let alone an ETA, for any of these features. On the other hand, most document-based tags are easy to incorporate into Classilla's parser and many of these are or will be supported.
 
 Currently, however, the highest priority is making sure that HTML 4.01 and CSS 2 are supported to a functional level; this is incomplete, but improving.
-
-==Classilla says I don't have the Contextual Menu Extension and won't start.==
-That's because you don't. The Contextual Menu Extension is a standard part of Mac OS 8.6 and 9, and should have come with your operating system. However, it is possible that it may have been inadvertently disabled (check the `Extensions (Disabled)` folder) or deleted. If so, consider reinstalling your OS, or copying the extension from another computer. Classilla requires this extension to run and cannot start without it.
 
 ==Some pages render really slowly.==
 There are several layout glitches that can cause Classilla to slow down dramatically on sites with complex or pathologic layouts. You can all-stop the browser by holding Cmd-Period down until you get control back. Note that when you do this, everything in layout stops and the current executing script (if any) stops as well, so the page might not appear correctly. However, this is safer than Force Quit, so try using all-stop first if Classilla seems to have stopped responding for awhile.
