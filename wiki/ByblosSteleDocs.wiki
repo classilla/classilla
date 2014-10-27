@@ -120,7 +120,7 @@ As usual, you will name your stele for `mail.foobar.invalid` as `mail.foobar.inv
 
 ==Complete page replacement (9.3.3 and later)==
 
-If you know that you will not need the page content because you will be completely overwriting it, such as a redirect page, you can speed up your stele considerably by telling Classilla so. This is done with the `fullReplace` function. It is the same as `wantURI`, except that you return `true` if you plan to replace the entire page, and `false` otherwise. If you return `true`, your `parseHTML` function is still called, but with an empty string. Here's an example that redirects a site's front page to ours at Floodgap:
+If you know that you will not need the page content because the content you will be replacing it with doesn't require it, such as redirect pages, you can speed up your stele considerably by telling Classilla so. This is done with the `fullReplace` function. It is the same as `wantURI`, except that you return `true` if you don't need the actual page (i.e., you're fully replacing it with totally separate content), and `false` otherwise. If you return `true`, your `parseHTML` function is still called, but with an empty string. Here's an example that redirects a site's front page to ours at Floodgap:
 
 {{{
 
@@ -147,7 +147,7 @@ function() {
 
 }}}
 
-The `<META>` tag in the body we return immediately redirects us. Because we said that we will fully replace the page, Classilla can save considerable work preprocessing the page, and on a fast system the redirection will be nearly instantaneous.
+The `<META>` tag in the body we return immediately redirects us. Because we said we don't need the original page to do the work, Classilla can save considerable time by completely avoiding preprocessing altogether, and on a fast system the redirection will be nearly instantaneous.
 
 `fullReplace()` is never called if `wantURI()` returns `false` for a given URI, and if you do not implement a `fullReplace()` function, it is assumed to be `false` for all URIs to be compatible with stelae from earlier versions of Classilla.
 
