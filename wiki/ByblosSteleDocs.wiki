@@ -44,7 +44,9 @@ function() {
 };
 }}}
 
-Name this stele `www.google.com.js` and place it in the `Byblos` folder (the same folder with your Classilla executable). You do not need to restart Classilla for this to take effect. Open the !JavaScript Console (under `Web Development`) to watch the process, then go to `www.google.com` (you may need to reload the page if it is cached). You will now see that all occurrences of `google` in the page text, even the title, have been immaturely replaced with `g00G13`. This makes the page quite useless, but serves as a demonstration. If you had the Console window open, you will see that Byblos logged the operations it took. If your stele had a syntax or other error in it, Byblos would log it to the console as well.
+Name this stele `www.google.com.js`. If you are using 9.3.3 or later, make a folder in your Documents folder called `Byblos` and save it there; otherwise, place it in the `Byblos` folder with your Classilla executable. You do not need to restart Classilla for this to take effect.
+
+Open the !JavaScript Console (under `Web Development`) to watch the process, then go to `www.google.com` (you may need to reload the page if it is cached). You will now see that all occurrences of `google` in the page text, even the title, have been immaturely replaced with `g00G13`. This makes the page quite useless, but serves as a demonstration. If you had the Console window open, you will see that Byblos logged the operations it took. If your stele had a syntax or other error in it, Byblos would log it to the console as well.
 
 All stelae consist of a single !JavaScript `function()`. This function must return an object with at least two slots: the first, `wantURI`, being a function that accepts an `nsIURI` object and returns `true` or `false` depending on whether the stele wishes to parse this actual URI, and the second, `parseHTML`, also being a function that accepts a string representing the document HTML and returns itself an object of two slots, one being the `response` ("`ok`" or otherwise) and the other being the `body`, which is the HTML after it has been rewritten.
 
@@ -108,7 +110,7 @@ The idea is the same, except your two-slot return object should have functions f
 
 To indicate that the stelae is for CSS and not HTML, you place it in the `" CSS"` (note leading space) folder inside the `Byblos` folder.
 
-A handy trivial situation is to return no CSS at all. This would be useful on sites where you want to completely, or mostly, destyle them automatically. Just return a response of `"ok"` as usual, but a body that is an empty string (`""`).
+A handy trivial situation is to return no CSS at all. This would be useful on sites where you want to completely, or mostly, destyle them automatically. Just return a response of `"ok"` as usual, but a body that is an empty string (`""`). You can make this faster with complete replacement in 9.3.3 (see below).
 
 ==Controlling domains and subdomains (9.3.2 and later)==
 
@@ -116,13 +118,46 @@ Occasionally you want to handle a site in general one way, but certain subdomain
 
 As usual, you will name your stele for `mail.foobar.invalid` as `mail.foobar.invalid.js`. But for the fallback, name it `ANY..foobar.invalid.js` (notice the double period). This will be then applied to any domain name `*.foobar.invalid` _after_ a search for that specific domain has failed.
 
+==Complete page replacement (9.3.3 and later)==
+
+If you know that you will not need the page content because you will be completely overwriting it, such as a redirect page, you can speed up your stele considerably by telling Classilla so. This is done with the `fullReplace` function. It is the same as `wantURI`, except that you return true if you plan to replace the entire page, and false otherwise. If you return true, your `parseHTML` function is still called, but with an empty string. Here's an example that redirects the a site's front page to ours at Floodgap:
+
+{{{
+
+function() {
+	return {
+		wantURI : function(uri) {
+			if (uri.path == "/" || uri.path == "")
+				return true;
+			return false;
+		},
+		fullReplace : function(uri) {
+			if (uri.path == "/" || uri.path == "")
+				return true;
+			return false;
+		},
+		parseHTML : function(text) {
+			return {
+				response : "ok",
+				body     : '<meta http-equiv="refresh" content="0; url=http://www.floodgap.com/">'
+			};
+		}
+	};
+};
+
+}}}
+
+The `<META>` tag in the body we return immediately redirects us. Because we said that we will fully replace the page, Classilla can save considerable work preprocessing the page, and on a fast system the redirection will be nearly instantaneous.
+
+`fullReplace()` is never called if `wantURI()` returns false for a given URI, and if you do not implement a `fullReplace()` function, it is assumed to be false for all URIs to be compatible with stelae from earlier versions of Classilla.
+
 ==Performance considerations==
 
 Because stelae are written in !JavaScript, they have the advantage of being dynamic but the disadvantage of being interpreted (and because they are dynamic, are interpreted each time they are invoked).
 
 Furthermore, if the stele indicates to Byblos that it can translate a URI, then Byblos must download the entire HTML of the page first before it can hand it to the stele (for obvious reasons), which means that Classilla's HTML parser cannot be working on the page while it downloads.
 
-You should therefore make sure that your stele is worth the trouble: it should either restore functionality that is not possible any other way, or it should remove portions of the page that are difficult or slow for Classilla to render ordinarily. In the latter case, even with Byblos' performance impact, a stele can boost the browser's overall performance.
+You should therefore make sure that your stele is worth the trouble: it should either restore functionality that is not possible any other way, or it should remove portions of the page that are difficult or slow for Classilla to render ordinarily. In the latter case, even with Byblos' performance impact, a stele can boost the browser's overall performance. If you are using 9.3.3 or later, and you know you won't need the page itself to rewrite it, then use the `fullReplace()` API to reduce the amount of overhead required.
 
 When you are unsure if you can help in a situation (such as the MDN stele above), you should return `false` from `wantURI()`. Even though the cost of interpreting the script is paid, Classilla can still render HTML as it comes down the pipe instead of waiting for all of it and passing it to a stele which can't do anything useful with it anyway, which at least doesn't add insult to injury in the end.
 
@@ -130,6 +165,7 @@ When you are unsure if you can help in a situation (such as the MDN stele above)
 
 When writing your stelae, be aware of the following limitations as well as the performance concerns above:
 
+  # If you are using Classilla 9.3.3 or later, stelae in `Documents:Byblos:` will take precedence over the built-in stelae. Hope yours are better!
   # Remember, stelae do not translate XHR or AJAX. Data that comes this way has to be dealt with in some other manner (such as suppressing the script).
   # Your stele should *only* consist of the single function body. Do not attempt to store persistent data outside of it, or assume that the function is persistent; it can be called any time or never, and the object may be destroyed promptly to conserve memory. That said, the object your function returns _may_ contain multiple slots such as library functions that your routines call (such as `this.libraryFunction`). These are okay, because they will be cleaned up when your object is destructed. However, they, too, should not be counted on to contain persistent data.
   # *Your stele is privileged code -- it runs with chrome privileges.* This means that if you use your stele to execute untrusted data, you could yourself open a security hole in the browser. Security in Classilla is less sophisticated than later Mozilla releases. Do not try to run !JavaScript you receive in the HTML; not only will it probably not work, it may do things to the browser you did not intend. Byblos' error checking will catch innocent mistakes, but it does not trap all attempts at stupidity.
