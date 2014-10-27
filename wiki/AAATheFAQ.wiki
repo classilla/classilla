@@ -62,6 +62,13 @@ Yes. Classilla as of 9.2.2 comes with Japanese (日本語) and German (Deutsch) 
 
 If you'd like to try creating your own, see [http://www-archive.mozilla.org/projects/l10n/mlp_howto.html How to localize Mozilla] (which will also work for the older code in Classilla). If you would like to contribute to the project as a translator, see issue 151.
 
+==When I use Classilla, I get mobile sites, not full sites.==
+Starting in 9.3.0, Classilla pretends to be a mobile browser to sites by default (a whitelist internally keeps exceptions). This gives pages that are smaller, simpler to render and faster to process, and surprisingly give you nearly all the functionality you got on the full desktop site. Try it. You'll like it.
+
+But, if you don't, you have two options. Many sites will let you set a cookie to disable the mobile site such as Wikipedia; the mobile page will have a link to let you turn it off. To go back to the mobile version, delete that cookie or select the mobile option again.
+
+For sites where even _that_ doesn't work, you can choose a desktop user agent from Preferences, Navigator, User Agent. This setting persists even if you navigate to a different site or quit the browser, but because this is non-standard, you will get a warning when you boot the browser with a non-standard user agent selected because Classilla may not support all the features the site may think it does.
+
 ==Does Classilla support TLS or SSL?==
 Classilla supports TLSv1, SSLv2 and SSLv3. Of the three, TLS is the most preferred and highest level of security, while SSL is an older encryption technology predating TLS. SSLv2 is no longer secure and should no longer be used; it is disabled by default starting in Classilla 9.3.3 and will be removed completely in a future version. SSLv3 is still available but is considered deprecated due to intrinsic flaws in the protocol and will be disabled by default in a future version. In addition, "export-only" low-key-length symmetric ciphers are also considered deprecated and will be disabled by default in a future version.
 
@@ -77,23 +84,6 @@ Classilla allows you to override certain checks on certificate identity when you
 
 With the added support in 9.3.3 and later versions, this situation should be much less common. If it occurs, you should examine the certificate carefully and decide what to do and how long you want the exception to last. There is no good rule of thumb on when this is safe to do, although *a site that used to work and suddenly fails to work, especially on a different network, should be considered an indication your connection is _not_ safe.* Remember: if you override a certificate check, you are telling Classilla that verification is not required or possible, which may cause you to send information to an unauthorized third party which is masquerading as the trusted site. Be cautious when approving these requests.
 
-==Does Classilla support plugins?==
-Classilla runs most NPAPI plugins, but most OS 9 compatible plugins are no longer updated and many have security issues (see the question on Flash below). That said, they may still be useful if you require their capabilities, *but using these old versions is at your own risk.* George Serban maintains a list of Classilla-compatible plugins at http://cherwally.webs.com/Classilla/Plugins.html
-
-==Does Classilla support Flash?==
-Yes, but OS 9 support was dropped after Flash 7. *There are known security problems in that version of Adobe Flash Player and its use is strongly discouraged.* Still, this is enough to surf many sites and even view many videos, although people have reported synchronization issues with certain codecs. Your humble author, however, does not use it.
-
-==Flash (and other plugins) make Classilla flicker really badly sometimes.==
-This is a known and unfortunately unfixable bug due to the way plugins in general work in Mac OS 9. See issue 14.
-
-If this really bugs you, you can disable plugins completely by going to Preferences > Advanced > Performance and checking Disable plugins.
-
-==Does Classilla support Java?==
-Yes, but only the version of Macintosh Runtime for Java that Apple provides with your version of Mac OS. *There are known security problems in all classic Mac OS versions of the MRJ and its use is strongly discouraged.* By default, Java is forced off in new profiles. You can turn it on from the preferences panel, but you should only use it on trusted sites. You will need to have plugins enabled and ensure that the MRJ Plugin is in your plugins folder (it comes with Classilla 9.2.1 and later).
-
-==Does Classilla support theming?==
-Yes, but due to its roots in Mozilla 1.3, it only supports Mozilla 1.3-compatible themes. That said, there are a lot of these still around which work just great with Classilla, and several Classilla-specific themes. Themes require at least Classilla 9.2 due to installation bugs that were fixed in that version. Tim Grissom maintains his custom theme and others at http://www.transcorp.com/AutoIndex/HTML/classilla.shtml . 
-
 ==Will Classilla support HTML 5?==
 Certain portions will be supported (and some actually already are invisibly). The most visible features such as CANVAS tags, however, will require extensive work for Clecko's non-Cairo-based graphics architecture, and features such as VIDEO and AUDIO tags may never be supported due to poor codec availability for OS 9. Networking support may also be difficult to integrate with the older Clecko codebase. There are no promises, let alone an ETA, for any of these features. On the other hand, most document-based tags are easy to incorporate into Classilla's parser and many of these are or will be supported.
 
@@ -101,13 +91,6 @@ Currently, however, the highest priority is making sure that HTML 4.01 and CSS 2
 
 ==Classilla says I don't have the Contextual Menu Extension and won't start.==
 That's because you don't. The Contextual Menu Extension is a standard part of Mac OS 8.6 and 9, and should have come with your operating system. However, it is possible that it may have been inadvertently disabled (check the `Extensions (Disabled)` folder) or deleted. If so, consider reinstalling your OS, or copying the extension from another computer. Classilla requires this extension to run and cannot start without it.
-
-==When I use Classilla, I get mobile sites, not full sites.==
-Starting in 9.3.0, Classilla pretends to be a mobile browser to sites by default (a whitelist internally keeps exceptions). This gives pages that are smaller, simpler to render and faster to process, and surprisingly give you nearly all the functionality you got on the full desktop site. Try it. You'll like it.
-
-But, if you don't, you have two options. Many sites will let you set a cookie to disable the mobile site such as Wikipedia; the mobile page will have a link to let you turn it off. To go back to the mobile version, delete that cookie or select the mobile option again.
-
-For sites where even _that_ doesn't work, you can choose a desktop user agent from Preferences, Navigator, User Agent. This setting persists even if you navigate to a different site or quit the browser, but because this is non-standard, you will get a warning when you boot the browser with a non-standard user agent selected because Classilla may not support all the features the site may think it does.
 
 ==Some pages render really slowly.==
 There are several layout glitches that can cause Classilla to slow down dramatically on sites with complex or pathologic layouts. You can all-stop the browser by holding Cmd-Period down until you get control back. Note that when you do this, everything in layout stops and the current executing script (if any) stops as well, so the page might not appear correctly. However, this is safer than Force Quit, so try using all-stop first if Classilla seems to have stopped responding for awhile.
@@ -146,6 +129,23 @@ That said, the Document Object Model (the piece that connects !JavaScript to the
 
 ==What is Byblos? How can I write my own Byblos site translators?==
 Byblos is (in Classilla 9.3.0 and up) Classilla's own HTML rewriting engine. Similar to Firefox Greasemonkey, but at a much lower level, Byblos allows you to write !JavaScript snippets called _stelae_ that can take the HTML for a page and dynamically insert, change or even cut out portions of it dynamically. Byblos stelae can get many sites that can't render at all to function, and you can write them yourself with just a text editor. See ByblosSteleDocs for how.
+
+==Does Classilla support plugins?==
+Classilla runs most NPAPI plugins, but most OS 9 compatible plugins are no longer updated and many have security issues (see the question on Flash below). That said, they may still be useful if you require their capabilities, *but using these old versions is at your own risk.* George Serban maintains a list of Classilla-compatible plugins at http://cherwally.webs.com/Classilla/Plugins.html
+
+==Does Classilla support Flash?==
+Yes, but OS 9 support was dropped after Flash 7. *There are known security problems in that version of Adobe Flash Player and its use is strongly discouraged.* Still, this is enough to surf many sites and even view many videos, although people have reported synchronization issues with certain codecs. Your humble author, however, does not use it.
+
+==Flash (and other plugins) make Classilla flicker really badly sometimes.==
+This is a known and unfortunately unfixable bug due to the way plugins in general work in Mac OS 9. See issue 14.
+
+If this really bugs you, you can disable plugins completely by going to Preferences > Advanced > Performance and checking Disable plugins.
+
+==Does Classilla support Java?==
+Yes, but only the version of Macintosh Runtime for Java that Apple provides with your version of Mac OS. *There are known security problems in all classic Mac OS versions of the MRJ and its use is strongly discouraged.* By default, Java is forced off in new profiles. You can turn it on from the preferences panel, but you should only use it on trusted sites. You will need to have plugins enabled and ensure that the MRJ Plugin is in your plugins folder (it comes with Classilla 9.2.1 and later).
+
+==Does Classilla support theming?==
+Yes, but due to its roots in Mozilla 1.3, it only supports Mozilla 1.3-compatible themes. That said, there are a lot of these still around which work just great with Classilla, and several Classilla-specific themes. Themes require at least Classilla 9.2 due to installation bugs that were fixed in that version. Tim Grissom maintains his custom theme and others at http://www.transcorp.com/AutoIndex/HTML/classilla.shtml . 
 
 ==Classilla disables Sherlock 2 on my non-English Mac.==
 If you are using a non-English keyboard and running Sherlock 2 and Classilla at the same time, your keyboard will not work in Sherlock 2 (it will work fine elsewhere). This can be solved by temporarily switching to an English keyboard layout. It is currently being debated whether this is a Mozilla or Mac OS/Sherlock bug.
