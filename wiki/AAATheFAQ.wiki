@@ -123,7 +123,7 @@ Certain scripts take a very long time to execute on slower Macs, and some may in
 Note that touching certain elements of the page or moving your mouse may also cause scripts to resume execution. Classilla cannot control this individually.
 
 ==Will Classilla's !JavaScript and layout/DOM support be updated?==
-Starting with Classilla 9.2, Classilla now uses a minimally modified version of !SpiderMonkey, the exact same !JavaScript interpreter Mozilla uses in Firefox 3.0.19. This interpreter is much faster and more stable than the one in previous versions of Classilla or WaMCom, and repairs many inadequacies. Plans to convert !TraceMonkey, an accelerated version with just-in-time compilation, are also being considered.
+Starting with Classilla 9.2, Classilla now uses a minimally modified version of !SpiderMonkey, the exact same !JavaScript interpreter Mozilla uses in Firefox 3.0.19. This interpreter is much faster and more stable than the one in previous versions of Classilla or WaMCom, and repairs many inadequacies.
 
 That said, the Document Object Model (the piece that connects !JavaScript to the web page) is still fairly out-of-date and many sites relying on very current features still won't work completely. This can only be upgraded to a certain point. Fortunately, mobile content is much less demanding and generally equally functional, and Classilla now fetches mobile content by default anyway (see above). For those sites that are still difficult to get working, you can use Byblos -- see the next question.
 
