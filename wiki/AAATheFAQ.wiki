@@ -41,7 +41,7 @@ Strictly speaking [http://bugzilla.mozilla.org/ Bugzilla] refers to either the B
 Again, you should *not* file Bugzilla issues for Classilla.
 
 ==Can I run Classilla on OS X?==
-Yes. In fact, Classilla may be the best browser option for you if you are running a very old version of OS X such as 10.0 or 10.1, but you must run it in Classic as it is not Carbonized. Reports from 10.2 users also indicate that it performs better than !SeaMonkey 1.1.x in some circumstances, so a combination may be your best best for Jaguar.
+Yes. In fact, Classilla may be the best browser option for you if you are running Rhapsody or a very old version of OS X such as 10.0 or 10.1, but you must run it in Classic (or OS X Server/Rhapsody's Blue Box) as it is not Carbonized. Reports from 10.2 users also indicate that it performs better than !SeaMonkey 1.1.x in some circumstances, so a combination may be your best best for Jaguar.
 
 If you are looking for a general OS X browser for PPC, however, there are better choices in later versions. For 10.3, Camino 1.6.11 (though EOL) still performs relatively well, and 10.4-10.5 have a maintained PowerPC Firefox branch with [http://www.tenfourfox.com/ TenFourFox], our sister project.
 
