@@ -1,4 +1,2 @@
 # classilla
-Building a secure browser for classic Mac OS.
-
-*Do not file issues here; they will be ignored and/or deleted.* This is for worklist items by authorized contributors only.
+This repository is officially defunct and will be removed. For more info, visit [Classilla.org](http://www.floodgap.com/software/classilla/).
